@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 Sahil Gupta — Developer Portfolio
 
 Welcome to my personal developer portfolio!  
@@ -51,3 +52,6 @@ npm install
 
 # Run locally
 npm start
+=======
+# sahil_portfolio
+>>>>>>> d3e3ebc00c9cafdc0e1638df5ecdb62343545f19
