@@ -10,7 +10,7 @@ Built with **React.js**, this site showcases my experience in:
 - ✅ Tools: GitHub, Postman, Figma, VS Code  
 
 📍 You can check it out live here:  
-**https://sahilgupta.dev** (or your deployed link)
+**https://sahilgupta03.github.io/sahil_portfolio/** (or your deployed link)
 
 ---
 
@@ -45,7 +45,7 @@ I’m a passionate full-stack developer with experience in building modern web a
 
 ```bash
 # Clone this repo
-git clone https://github.com/sahilguptaofficial/sahil-portfolio.git
+git clone https://github.com/SahilGupta03/sahil_portfolio.git
 
 # Install dependencies
 npm install
