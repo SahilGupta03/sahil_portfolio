@@ -26,7 +26,11 @@ const greeting = {
     "Passionate Full Stack Developer with experience in building responsive web apps using React, Node.js, and SQL Server. I love solving real-world problems through code and constantly learning new technologies. And Also Work on Android App Development using Java.",
   ),
   resumeLink:
+<<<<<<< HEAD
     "https://drive.google.com/file/d/1rXJnkEbqvAQDjsQ6fcMNe6RZQI603F53/view?usp=drive_link", // Set to empty to hide the button
+=======
+    "https://drive.google.com/file/d/1D_2Lrb8a37ekQ1gLUGcozza_wr3_BoJw/view?usp=sharing", // Set to empty to hide the button
+>>>>>>> 6b6fcd0dcfb62df46cbd59b0d2d4091af61bde86
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -170,11 +174,19 @@ const techStack = {
   viewSkillBars: true, // Show the skill proficiency bars
   experience: [
     {
+<<<<<<< HEAD
       Stack: "Frontend (React.js,MUI, HTML/CSS, Bootstrap)",
       progressPercentage: "90%"
     },
     {
       Stack: "Backend (Node.js, Express.js, SQL Server,.NET)",
+=======
+      Stack: "Frontend (React.js, HTML/CSS, Bootstrap)",
+      progressPercentage: "90%"
+    },
+    {
+      Stack: "Backend (Node.js, Express.js, SQL Server)",
+>>>>>>> 6b6fcd0dcfb62df46cbd59b0d2d4091af61bde86
       progressPercentage: "75%"
     },
     {
@@ -306,6 +318,35 @@ const bigProjects = {
       projectDesc: "Messaging Dashboard is a full-stack application developed using React and Node.js to manage and track communication templates. It includes role-based access control, template whitelisting, and real-time monitoring, ensuring secure and organized message distribution across departments.",
       footerLink: []
     },
+<<<<<<< HEAD
+=======
+    // {
+    //   image: require("./assets/images/spicejtlogo.png"), // optional custom logo
+    //   projectName: "Taskify",
+    //   projectDesc: "Jira-like task and issue management system with full-stack tech (React, Node.js, SQL Server) and WhatsApp/email notifications.",
+    //   footerLink: [
+    //     {
+    //       name: "GitHub (if public)",
+    //       url: "https://github.com/yourusername/taskify" // Replace with real link if available
+    //     }
+    //   ]
+    // },
+    {
+      image: require("./assets/images/portfoliologo.png"), // Add a relevant icon or screenshot
+      projectName: "My Portfolio",
+      projectDesc: "Personal portfolio website built with React.js to showcase my projects, skills, resume, and contact details.",
+      footerLink: [
+        {
+          name: "Live Site",
+          url: "https://your-portfolio-link.com" // ← replace with your real deployed URL
+        },
+        {
+          name: "GitHub Repo",
+          url: "https://github.com/yourusername/portfolio" // optional
+        }
+      ]
+    },
+>>>>>>> 6b6fcd0dcfb62df46cbd59b0d2d4091af61bde86
     {
       image: require("./assets/images/hmra.png"), // Add a relevant icon or screenshot
       projectName: "HMRA Website",
@@ -313,6 +354,7 @@ const bigProjects = {
       footerLink: [
         {
           name: "Live Site",
+<<<<<<< HEAD
           url: "https://hmraca.in/" // ← replace with your real deployed URL
         }
       ]
@@ -325,6 +367,13 @@ const bigProjects = {
         {
           name: "Live Site",
           url: "https://mahavarsamajateli.in/" // ← replace with your real deployed URL
+=======
+          url: "https://your-portfolio-link.com" // ← replace with your real deployed URL
+        },
+        {
+          name: "GitHub Repo",
+          url: "https://github.com/yourusername/portfolio" // optional
+>>>>>>> 6b6fcd0dcfb62df46cbd59b0d2d4091af61bde86
         }
       ]
     }
