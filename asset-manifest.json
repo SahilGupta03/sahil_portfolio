@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/sahil_portfolio/static/css/main.8e4ffd02.css",
-    "main.js": "/sahil_portfolio/static/js/main.a40d63c0.js",
+    "main.js": "/sahil_portfolio/static/js/main.7cd593a3.js",
     "static/css/64.bba8fa55.chunk.css": "/sahil_portfolio/static/css/64.bba8fa55.chunk.css",
     "static/js/64.855923e1.chunk.js": "/sahil_portfolio/static/js/64.855923e1.chunk.js",
     "static/css/769.b3cbb36b.chunk.css": "/sahil_portfolio/static/css/769.b3cbb36b.chunk.css",
     "static/js/769.89717886.chunk.js": "/sahil_portfolio/static/js/769.89717886.chunk.js",
+    "static/media/hmra.png": "/sahil_portfolio/static/media/hmra.f21c66589eab782ba75d.png",
+    "static/media/mahavarsamajateli.png": "/sahil_portfolio/static/media/mahavarsamajateli.db68f4715d0a47f32a9d.png",
     "static/media/grouplogo.png": "/sahil_portfolio/static/media/grouplogo.c537e04f393d29db3e81.png",
-    "static/media/hmra.png": "/sahil_portfolio/static/media/hmra.b140261311203fdb6213.png",
     "static/media/Montserrat-Regular.ttf": "/sahil_portfolio/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
     "static/media/Sahil_Gupta_Resume.pdf": "/sahil_portfolio/static/media/Sahil_Gupta_Resume.522fcb135d1f499bccb2.pdf",
     "static/media/spicedestinationlogo.png": "/sahil_portfolio/static/media/spicedestinationlogo.ca4eebe2efed431aacde.png",
@@ -23,7 +24,7 @@
     "index.html": "/sahil_portfolio/index.html",
     "static/media/talksCardBack.svg": "/sahil_portfolio/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
     "main.8e4ffd02.css.map": "/sahil_portfolio/static/css/main.8e4ffd02.css.map",
-    "main.a40d63c0.js.map": "/sahil_portfolio/static/js/main.a40d63c0.js.map",
+    "main.7cd593a3.js.map": "/sahil_portfolio/static/js/main.7cd593a3.js.map",
     "64.bba8fa55.chunk.css.map": "/sahil_portfolio/static/css/64.bba8fa55.chunk.css.map",
     "64.855923e1.chunk.js.map": "/sahil_portfolio/static/js/64.855923e1.chunk.js.map",
     "769.b3cbb36b.chunk.css.map": "/sahil_portfolio/static/css/769.b3cbb36b.chunk.css.map",
@@ -31,6 +32,6 @@
   },
   "entrypoints": [
     "static/css/main.8e4ffd02.css",
-    "static/js/main.a40d63c0.js"
+    "static/js/main.7cd593a3.js"
   ]
 }
