@@ -1,25 +1,25 @@
 {
-  "short_name": "Sahil",
-  "name": "Sahil Gupta Portfolio",
+  "short_name": "Sahil Gupta",
+  "name": "Sahil Gupta — Software Engineer",
   "icons": [
     {
-      "src": "/favicon.ico",
+      "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/android-chrome-384x384.png",
+      "src": "android-chrome-384x384.png",
       "type": "image/png",
       "sizes": "384x384"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#6c63ff",
-  "background_color": "#ffffff"
+  "theme_color": "#f3f0e8",
+  "background_color": "#f3f0e8"
 }

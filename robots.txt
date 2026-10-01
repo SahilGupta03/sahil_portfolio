@@ -1,2 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
+Allow: /
+
+Sitemap: https://sahilgupta03.github.io/sahil_portfolio/sitemap.xml

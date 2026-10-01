@@ -1,37 +1,19 @@
 {
   "files": {
-    "main.css": "/sahil_portfolio/static/css/main.8e4ffd02.css",
-    "main.js": "/sahil_portfolio/static/js/main.7cd593a3.js",
-    "static/css/64.bba8fa55.chunk.css": "/sahil_portfolio/static/css/64.bba8fa55.chunk.css",
-    "static/js/64.855923e1.chunk.js": "/sahil_portfolio/static/js/64.855923e1.chunk.js",
-    "static/css/769.b3cbb36b.chunk.css": "/sahil_portfolio/static/css/769.b3cbb36b.chunk.css",
-    "static/js/769.89717886.chunk.js": "/sahil_portfolio/static/js/769.89717886.chunk.js",
-    "static/media/hmra.png": "/sahil_portfolio/static/media/hmra.f21c66589eab782ba75d.png",
-    "static/media/mahavarsamajateli.png": "/sahil_portfolio/static/media/mahavarsamajateli.db68f4715d0a47f32a9d.png",
-    "static/media/grouplogo.png": "/sahil_portfolio/static/media/grouplogo.c537e04f393d29db3e81.png",
-    "static/media/Montserrat-Regular.ttf": "/sahil_portfolio/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
-    "static/media/Sahil_Gupta_Resume.pdf": "/sahil_portfolio/static/media/Sahil_Gupta_Resume.522fcb135d1f499bccb2.pdf",
-    "static/media/spicedestinationlogo.png": "/sahil_portfolio/static/media/spicedestinationlogo.ca4eebe2efed431aacde.png",
-    "static/media/portfoliologo.png": "/sahil_portfolio/static/media/portfoliologo.d0254fa8e191e7750f39.png",
-    "static/media/Agustina.woff": "/sahil_portfolio/static/media/Agustina.eb0c59dda4cc308cba96.woff",
-    "static/media/manOnTable.svg": "/sahil_portfolio/static/media/manOnTable.8f117eb207e57ed8f89d67d595aceb45.svg",
-    "static/media/rewards.png": "/sahil_portfolio/static/media/rewards.6d58cc5b84c4a469a3a8.png",
-    "static/media/contactMailDark.svg": "/sahil_portfolio/static/media/contactMailDark.1db650d351729a0f17b4e3104e6a7b7a.svg",
-    "static/media/developerActivity.svg": "/sahil_portfolio/static/media/developerActivity.2c0445cae86f4243433a2f5a22b2c031.svg",
-    "static/media/spicejtlogo.png": "/sahil_portfolio/static/media/spicejtlogo.c27623e53c3ff437f532.png",
-    "static/media/spicejetlogo.png": "/sahil_portfolio/static/media/spicejetlogo.89aa2ce229076d5ce0ef.png",
-    "static/media/skill.svg": "/sahil_portfolio/static/media/skill.35a147662ab0a1d15e579690446e0258.svg",
+    "main.css": "/sahil_portfolio/static/css/main.a8682db5.css",
+    "main.js": "/sahil_portfolio/static/js/main.bc9c755e.js",
+    "static/media/ziclo-1.png": "/sahil_portfolio/static/media/ziclo-1.14f6c0473626c35bf40b.png",
+    "static/media/ziclo-2.png": "/sahil_portfolio/static/media/ziclo-2.274fb7137f4a97b8c689.png",
+    "static/media/ziclo-3.png": "/sahil_portfolio/static/media/ziclo-3.1afac58c7ed3903224e6.png",
+    "static/media/portfolio.jpg": "/sahil_portfolio/static/media/portfolio.e6cbfcd2a4c840ac9936.jpg",
+    "static/media/mahavar-samaj.jpg": "/sahil_portfolio/static/media/mahavar-samaj.3aaf57a404593204e107.jpg",
+    "static/media/hmra.jpg": "/sahil_portfolio/static/media/hmra.0e293435e6bc6b5407e7.jpg",
     "index.html": "/sahil_portfolio/index.html",
-    "static/media/talksCardBack.svg": "/sahil_portfolio/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
-    "main.8e4ffd02.css.map": "/sahil_portfolio/static/css/main.8e4ffd02.css.map",
-    "main.7cd593a3.js.map": "/sahil_portfolio/static/js/main.7cd593a3.js.map",
-    "64.bba8fa55.chunk.css.map": "/sahil_portfolio/static/css/64.bba8fa55.chunk.css.map",
-    "64.855923e1.chunk.js.map": "/sahil_portfolio/static/js/64.855923e1.chunk.js.map",
-    "769.b3cbb36b.chunk.css.map": "/sahil_portfolio/static/css/769.b3cbb36b.chunk.css.map",
-    "769.89717886.chunk.js.map": "/sahil_portfolio/static/js/769.89717886.chunk.js.map"
+    "main.a8682db5.css.map": "/sahil_portfolio/static/css/main.a8682db5.css.map",
+    "main.bc9c755e.js.map": "/sahil_portfolio/static/js/main.bc9c755e.js.map"
   },
   "entrypoints": [
-    "static/css/main.8e4ffd02.css",
-    "static/js/main.7cd593a3.js"
+    "static/css/main.a8682db5.css",
+    "static/js/main.bc9c755e.js"
   ]
 }
