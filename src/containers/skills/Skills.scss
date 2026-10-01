@@ -1,64 +1,132 @@
-@import "../../_globalColor";
+@use "../../styles/mixins" as *;
 
-.skills-main-div {
-  display: flex;
-  width: 100%;
-  overflow: hidden;
+.skills {
+  border-top: 1px solid var(--line-strong);
+
+  &__legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 24px;
+    margin-bottom: 20px;
+    color: var(--muted);
+    font-size: 0.62rem;
+  }
+
+  &__row {
+    position: relative;
+    display: grid;
+    gap: 14px 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+
+    @include tablet-up {
+      grid-template-columns: 48px minmax(0, 3fr) minmax(0, 7fr);
+      align-items: start;
+      padding: 32px 0;
+    }
+
+    // Signal bar that grows along the row on hover
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      height: 1px;
+      width: 100%;
+      background: var(--signal);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.8s var(--ease-out);
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &__index {
+    color: var(--accent);
+
+    @include tablet-up {
+      padding-top: 10px;
+    }
+  }
+
+  &__category {
+    font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem);
+    line-height: 1.05;
+    transition: transform 0.6s var(--ease-out);
+
+    @include tablet-up {
+      .skills__row:hover & {
+        transform: translateX(8px);
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+  }
 }
 
-.skills-text-div {
-  margin-left: 50px;
-}
+/* Technology badge */
+.skill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition: transform 0.35s var(--ease-out), border-color 0.3s ease,
+    background-color 0.3s ease, color 0.3s ease;
 
-.skills-main-div > * {
-  flex: 1;
-  margin-bottom: 30px;
-}
+  &:hover {
+    transform: translateY(-2px);
+    border-color: var(--ink);
+  }
 
-.skills-image-div > img {
-  max-width: 100%;
-  height: auto;
-}
+  &__logo {
+    flex-shrink: 0;
+    margin-left: -4px;
+    border-radius: 4px;
+  }
 
-.skills-heading {
-  font-size: 56px;
-  font-weight: 400;
-}
-.subTitle {
-  color: $subTitle;
-}
+  &__dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+  }
 
-/* Media Query */
-@media (max-width: 1380px) {
-  .skills-heading {
-    font-size: 40px;
+  // Day-to-day frontend stack
+  &--core {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--paper);
+
+    &:hover {
+      background: var(--signal);
+      border-color: var(--signal);
+      color: #141413;
+    }
   }
-}
-@media (max-width: 768px) {
-  .skills-heading {
-    font-size: 30px;
-    text-align: center;
-  }
-  .greeting-text-p {
-    font-size: 16px;
-    line-height: normal;
-  }
-  .skills-main-div {
-    flex-direction: column;
-  }
-  .skills-text-div {
-    margin-left: 0px;
-    margin: 20px;
-  }
-  .skills-text {
-    font-size: 16px;
-  }
-  .skills-text-subtitle {
-    font-size: 16px;
-    text-align: center;
-  }
-  .skills-image-div {
-    /* display: none; */
-    order: 2;
+
+  &--legend {
+    height: 24px;
+    padding: 0 10px;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
   }
 }

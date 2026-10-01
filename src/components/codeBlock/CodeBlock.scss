@@ -1,0 +1,75 @@
+// Editor palette — warm, low-saturation, tuned to the site's ink & signal colours.
+.code {
+  --tok-keyword: #ff8a5b;
+  --tok-string: #b5d68f;
+  --tok-component: #f5c27a;
+  --tok-tag: #8fb8ff;
+  --tok-attr: #d4a5f5;
+  --tok-number: #f5c27a;
+  --tok-punct: #8c867e;
+  --tok-comment: #6f6a63;
+
+  margin: 0;
+  overflow-x: auto;
+  padding: 18px 0;
+  color: #ece8df;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.75;
+  tab-size: 2;
+  scrollbar-width: thin;
+
+  &:focus-visible {
+    outline-offset: -2px;
+  }
+
+  code {
+    display: grid;
+    min-width: max-content;
+    font: inherit;
+  }
+
+  &__line {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    padding-right: 20px;
+  }
+
+  &__num {
+    padding-right: 16px;
+    color: #4d4a45;
+    text-align: right;
+    user-select: none;
+  }
+
+  &__text {
+    white-space: pre;
+  }
+}
+
+.tok-keyword {
+  color: var(--tok-keyword);
+}
+.tok-string {
+  color: var(--tok-string);
+}
+.tok-component {
+  color: var(--tok-component);
+}
+.tok-tag {
+  color: var(--tok-tag);
+}
+.tok-attr {
+  color: var(--tok-attr);
+  font-style: italic;
+}
+.tok-number {
+  color: var(--tok-number);
+}
+.tok-punct {
+  color: var(--tok-punct);
+}
+.tok-comment {
+  color: var(--tok-comment);
+  font-style: italic;
+}

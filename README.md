@@ -1,57 +1,46 @@
-<<<<<<< HEAD
-# 🚀 Sahil Gupta — Developer Portfolio
+# Sahil Gupta — Portfolio
 
-Welcome to my personal developer portfolio!  
-Built with **React.js**, this site showcases my experience in:
+Personal portfolio of Sahil Gupta, Software Engineer (Frontend).
 
-- ✅ Frontend: React.js, Bootstrap, Tailwind CSS  
-- ✅ Backend: Node.js, Express, SQL Server  
-- ✅ Mobile: Android (Java), React Native  
-- ✅ Tools: GitHub, Postman, Figma, VS Code  
+**Live:** https://sahilgupta03.github.io/sahil_portfolio/
 
-📍 You can check it out live here:  
-**https://sahilgupta03.github.io/sahil_portfolio/** (or your deployed link)
+Built with React (Create React App) and SCSS. No UI framework, no icon font —
+icons are inline SVG and the only external request is Google Fonts.
 
----
+## Editing content
 
-## 💡 About Me
+All text lives in [`src/portfolio.js`](src/portfolio.js) — profile, hero, about,
+skills, experience, projects, education, achievements and contact. Components
+read from it, so most updates don't require touching JSX.
 
-I’m a passionate full-stack developer with experience in building modern web and mobile applications. Previously focused on Android (Java), I now work primarily with **React.js** and **Node.js** to deliver smart and scalable solutions.
+The downloadable resume is [`public/Sahil_Gupta_Resume.pdf`](public/Sahil_Gupta_Resume.pdf).
+Replace that file (keeping the name) to update it.
 
----
+## Project structure
 
-## 📁 Tech Stack
+```
+public/            index.html (SEO + social meta), resume PDF, og-image, icons
+src/
+  portfolio.js     all site content
+  index.scss       design tokens (light/dark), base styles, shared utilities
+  styles/          SCSS breakpoints/mixins
+  components/      Header, Footer, Button, SectionHeading, Reveal, ThemeToggle,
+                   SocialMedia, icons
+  containers/      page sections: hero, about, skills, workExperience,
+                   projects, education, contact
+  hooks/           useLocalStorage, useActiveSection
+```
 
-| Category        | Technologies                                    |
-|----------------|-------------------------------------------------|
-| Frontend        | React.js, Redux, JavaScript, HTML, CSS, Sass   |
-| Backend         | Node.js, Express.js                            |
-| Database        | SQL Server, MySQL                              |
-| Mobile          | Android (Java), React Native                   |
-| Tools           | Git, VS Code, Postman, Figma, Chrome DevTools  |
-
----
-
-## 🚀 Features
-
-- Responsive and mobile-friendly  
-- Theme customization (dark/light)  
-- Lottie animations  
-- GitHub pages deployment
-
----
-
-## 📦 Installation & Setup
+## Scripts
 
 ```bash
-# Clone this repo
-git clone https://github.com/SahilGupta03/sahil_portfolio.git
-
-# Install dependencies
 npm install
+npm start          # dev server
+npm test           # tests
+npm run build      # production build into build/
+npm run deploy     # build + publish build/ to the gh-pages branch
+```
 
-# Run locally
-npm start
-=======
-# sahil_portfolio
->>>>>>> d3e3ebc00c9cafdc0e1638df5ecdb62343545f19
+The site is served from the `/sahil_portfolio/` sub-path; the `homepage` field
+in `package.json` makes CRA emit asset URLs for that path. Files in `public/`
+are referenced through `process.env.PUBLIC_URL` (or `%PUBLIC_URL%` in HTML).

@@ -1,37 +1,228 @@
-.experience-cards-div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 1rem 1rem;
+@use "../../styles/mixins" as *;
+
+.jobs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line-strong);
 }
 
-.experience-heading {
-  font-size: 56px;
-  font-weight: 400;
-}
+.job {
+  position: relative;
+  border-bottom: 1px solid var(--line);
 
-.experience-container {
-  display: flex;
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
-}
-
-.experience-container > * {
-  flex: 1;
-}
-
-/* Media Query */
-
-@media (max-width: 1380px) {
-  .experience-heading {
-    font-size: 40px;
+  &__heading {
+    font: inherit;
+    letter-spacing: normal;
   }
-}
 
-@media (max-width: 768px) {
-  .experience-heading {
-    font-size: 30px;
-    text-align: center;
+  &__toggle {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px;
+    gap: 12px 24px;
+    align-items: center;
+    width: 100%;
+    padding: 28px 0;
+    text-align: left;
+
+    @include tablet-up {
+      grid-template-columns: 180px minmax(0, 1fr) 48px;
+      padding: 40px 0;
+    }
+
+    // Wash that rises behind the row on hover
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0 calc(var(--gutter) * -1);
+      z-index: -1;
+      background: var(--paper-2);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.6s var(--ease-out);
+    }
+
+    &:hover::before {
+      transform: scaleY(1);
+    }
+  }
+
+  &__date {
+    grid-column: 1 / -1;
+    color: var(--muted);
+
+    @include tablet-up {
+      grid-column: auto;
+    }
+  }
+
+  &__title {
+    display: grid;
+    gap: 6px;
+  }
+
+  &__role {
+    font-size: clamp(1.6rem, 1.1rem + 2vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    transition: transform 0.6s var(--ease-out);
+  }
+
+  &__toggle:hover &__role {
+    transform: translateX(6px);
+  }
+
+  &__company {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(1.2rem, 1rem + 0.7vw, 1.5rem);
+    color: var(--accent);
+  }
+
+  &__note {
+    color: var(--muted);
+  }
+
+  &__icon {
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--line-strong);
+    transition: transform 0.6s var(--ease-out), background-color 0.35s ease,
+      color 0.35s ease, border-color 0.35s ease;
+  }
+
+  &.is-open &__icon {
+    transform: rotate(135deg);
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+  }
+
+  // Height animation via grid rows (0fr ↔ 1fr); visibility keeps collapsed
+  // content out of the tab order and accessibility tree.
+  &__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    visibility: hidden;
+    transition: grid-template-rows 0.7s var(--ease-out),
+      visibility 0s linear 0.7s;
+  }
+
+  &.is-open &__panel {
+    grid-template-rows: 1fr;
+    visibility: visible;
+    transition: grid-template-rows 0.7s var(--ease-out), visibility 0s;
+  }
+
+  &__panel-inner {
+    overflow: hidden;
+  }
+
+  &__content {
+    padding: 0 0 40px;
+
+    @include tablet-up {
+      margin-left: calc(180px + 24px);
+      max-width: 760px;
+    }
+  }
+
+  &__summary {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+  &__bullets {
+    margin-top: 20px;
+  }
+
+  // Resume-sourced figures, set large for quick scanning
+  &__impact {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 24px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  &__metric {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 4px;
+    padding: 18px 20px;
+
+    & + & {
+      border-left: 1px solid var(--line-strong);
+    }
+  }
+
+  &__metric-value {
+    font-size: clamp(2rem, 1.5rem + 1.6vw, 2.75rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: var(--accent);
+  }
+
+  &__metric-label {
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+
+  &__systems {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+    margin-top: 20px;
+  }
+
+  &__systems-label {
+    color: var(--muted);
+    font-size: 0.62rem;
+  }
+
+  &__systems-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+  }
+
+  &__system {
+    display: inline-grid;
+    place-items: center;
+    height: 28px;
+    padding: 0 10px;
+    border-radius: 6px;
+    background: var(--stage);
+    color: var(--signal);
+    font-size: 0.7rem;
+    transition: transform 0.3s var(--ease-out), background-color 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      background: var(--signal);
+      color: #141413;
+    }
+  }
+
+  &__tags {
+    margin-top: 28px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__panel,
+    &.is-open &__panel {
+      transition: none;
+    }
   }
 }

@@ -1,0 +1,107 @@
+@use "../../styles/mixins" as *;
+
+// Hairline grid (no cards): borders come from a 1px gap over a line-coloured
+// background, so every cell edge is drawn exactly once at any column count.
+.craft {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line);
+
+  @include tablet-up {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include desktop-up {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  &__item {
+    position: relative;
+    isolation: isolate;
+    padding: 28px 0;
+    background: var(--paper);
+
+    @include tablet-up {
+      padding: 36px 32px 40px;
+
+      &:nth-child(odd) {
+        padding-left: 0;
+      }
+    }
+
+    @include desktop-up {
+      &:nth-child(odd) {
+        padding-left: 32px;
+      }
+
+      &:nth-child(3n + 1) {
+        padding-left: 0;
+      }
+    }
+
+    // Signal bar that draws across the top edge on hover
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--signal);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.7s var(--ease-out);
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  &__token {
+    display: inline-flex;
+    align-items: center;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 6px;
+    background: var(--stage);
+    color: var(--signal);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    transition: background-color 0.35s ease, color 0.35s ease;
+
+    .craft__item:hover & {
+      background: var(--signal);
+      color: #141413;
+    }
+  }
+
+  &__index {
+    color: var(--subtle);
+  }
+
+  &__title {
+    font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.75rem);
+    letter-spacing: -0.035em;
+  }
+
+  &__text {
+    margin-top: 12px;
+    max-width: 38ch;
+    color: var(--muted);
+    font-size: 0.975rem;
+    line-height: 1.65;
+  }
+}

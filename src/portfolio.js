@@ -1,542 +1,545 @@
-/* Change this file to get your personal Portfolio */
+/* Single source of truth for all portfolio content.
+   Keep this file in sync with the resume in public/Sahil_Gupta_Resume.pdf. */
 
-// To change portfolio colors globally go to the  _globalColor.scss file
+const resumeUrl = `${process.env.PUBLIC_URL}/Sahil_Gupta_Resume.pdf`;
 
-import emoji from "react-easy-emoji";
-import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
-
-// Splash Screen
-
-const splashScreen = {
-  enabled: true, // set false to disable splash screen
-  animation: splashAnimation,
-  duration: 2000 // Set animation duration as per your animation
-};
-
-// Summary And Greeting Section
-
-const illustration = {
-  animated: true // Set to false to use static SVG
-};
-
-const greeting = {
-  username: "Sahil Gupta",
-  title: "Hi all, I'm Sahil Gupta",
-  subTitle: emoji(
-    "Passionate Full Stack Developer with experience in building responsive web apps using React, Node.js, and SQL Server. I love solving real-world problems through code and constantly learning new technologies. And Also Work on Android App Development using Java.",
-  ),
-  resumeLink:
-<<<<<<< HEAD
-    "https://drive.google.com/file/d/1rXJnkEbqvAQDjsQ6fcMNe6RZQI603F53/view?usp=drive_link", // Set to empty to hide the button
-=======
-    "https://drive.google.com/file/d/1D_2Lrb8a37ekQ1gLUGcozza_wr3_BoJw/view?usp=sharing", // Set to empty to hide the button
->>>>>>> 6b6fcd0dcfb62df46cbd59b0d2d4091af61bde86
-  displayGreeting: true // Set false to hide this section, defaults to true
-};
-
-// Social Media Links
-
-const socialMediaLinks = {
+const profile = {
+  name: "Sahil Gupta",
+  initials: "SG",
+  title: "Software Engineer",
+  role: "Frontend Developer",
+  focus: "Frontend",
+  location: "Gurgaon, India",
+  email: "sahil84330@gmail.com",
   github: "https://github.com/SahilGupta03",
+  repo: "https://github.com/SahilGupta03/sahil_portfolio",
   linkedin: "https://www.linkedin.com/in/sahil-gupta-169759190",
-  gmail: "sahil84330@gmail.com",
-  // gitlab: "https://gitlab.com/saadpasta",
-  // facebook: "https://www.facebook.com/saad.pasta7",
-  // medium: "https://medium.com/@saadpasta",
-  // stackoverflow: "https://stackoverflow.com/users/10422806/saad-pasta",
-  // Instagram, Twitter and Kaggle are also supported in the links!
-  // To customize icons and social links, tweak src/components/SocialMedia
-  display: true // Set true to display this section, defaults to false
+  resumeUrl,
+  resumeFileName: "Sahil_Gupta_Resume.pdf"
 };
 
-// Skills Section
-
-const skillsSection = {
-  title: "What I do",
-  subTitle: "PASSIONATE FULL STACK DEVELOPER SPECIALIZING IN WEB & MOBILE APP DEVELOPMENT",
-  skills: [
-    emoji("⚡ Build highly interactive front-end UIs using React and React Native for web and mobile apps"),
-    emoji("⚡ Create Progressive Web Apps (PWAs), Single Page Applications (SPAs), and cross-platform mobile apps"),
-    emoji("⚡ Backend development using Node.js with SQL databases and API integrations"),
-    emoji("⚡ Integration of services like Firebase, WhatsApp API, and email automation for real-time updates"),
-    emoji("⚡ Version control and team collaboration using Git & GitHub")
-  ],
-
-
-
-  /* Make Sure to include correct Font Awesome Classname to view your icon
-https://fontawesome.com/icons?d=gallery */
-
-  softwareSkills: [
-    {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5"
-    },
-    {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt"
-    },
-    {
-      skillName: "javascript",
-      fontAwesomeClassname: "fab fa-js"
-    },
-    {
-      skillName: "react",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "react native",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "nodejs",
-      fontAwesomeClassname: "fab fa-node-js"
-    },
-    {
-      skillName: "android",
-      fontAwesomeClassname: "fab fa-android"
-    },
-    {
-      skillName: "mobile apps",
-      fontAwesomeClassname: "fas fa-mobile-alt"
-    },
-    {
-      skillName: "git",
-      fontAwesomeClassname: "fab fa-git-alt"
-    },
-    {
-      skillName: "github",
-      fontAwesomeClassname: "fab fa-github"
-    },
-    {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
-    },
-    {
-      skillName: "vscode",
-      fontAwesomeClassname: "fas fa-code"
-    },
-    {
-      skillName: "sql",
-      fontAwesomeClassname: "fas fa-database"
-    },
-    {
-      skillName: "bootstrap",
-      fontAwesomeClassname: "fab fa-bootstrap"
-    },
-    {
-      skillName: "sass",
-      fontAwesomeClassname: "fab fa-sass"
-    }
-  ],
-
-  display: true // Set false to hide this section, defaults to true
+const hero = {
+  eyebrow: "Software Engineer at SpiceJet",
+  // `headlineAccent` is set in italic serif at the end of the headline.
+  headline: "Building digital experiences that feel",
+  headlineAccent: "effortless.",
+  intro:
+    "I'm a frontend developer focused on building responsive, intuitive and high-performance web applications with React, Next.js and TypeScript — currently a Software Engineer at SpiceJet, with 3+ years of production experience."
 };
 
-// Education Section
+const about = {
+  statement:
+    "I turn requirements into fast, responsive interfaces — built from reusable components, wired to real APIs and shipped to production.",
+  paragraphs: [
+    "I'm a software engineer with 3+ years of experience building and maintaining production web applications. My focus is the frontend: React.js and Next.js with JavaScript and TypeScript, styled with Tailwind CSS, Bootstrap or Material UI, and connected to REST APIs.",
+    "At SpiceJet (including SpiceTech, its technology subsidiary) I build full-stack applications with React.js frontends and .NET / ASP.NET Core Web API backends, covering booking management, passenger handling, baggage tracking and notifications. I usually own a feature end to end — requirements, implementation, testing, deployment and production debugging with Chrome DevTools and Postman.",
+    "I care about responsive, cross-browser layouts, component-based architecture and performance. Outside SpiceJet, I've delivered client websites as a freelancer and built Ziclo, a React Native service-booking app, in TypeScript with Expo."
+  ],
+  current: [
+    {label: "Role", value: "Software Engineer"},
+    {label: "Company", value: "SpiceJet (incl. SpiceTech)"},
+    {label: "Since", value: "March 2023"},
+    {label: "Based in", value: "Gurgaon, India"}
+  ],
+  // Rendered with logos in the About section.
+  stack: ["react", "next", "ts", "js", "html", "css"]
+};
 
-const educationInfo = {
-  display: true, // Set false to hide this section, defaults to true
-  schools: [
+// How I build — practices, each tied to real work.
+const craft = [
+  {
+    token: "<Button />",
+    title: "Reusable components",
+    text: "Component-based architecture with small, composable pieces and clear props — like the Button in the playground above, reused across this site."
+  },
+  {
+    token: "@media",
+    title: "Responsive UI",
+    text: "Layouts designed for every breakpoint and checked across browsers, from wide internal dashboards to phones."
+  },
+  {
+    token: "store",
+    title: "State management",
+    text: "Redux and Redux Toolkit on React apps at SpiceJet; Zustand with typed forms (React Hook Form + Zod) in Ziclo."
+  },
+  {
+    token: "fetch()",
+    title: "API integration",
+    text: "Frontends wired to REST and ASP.NET Core Web APIs, with validation workflows that cut manual booking errors by ~30%."
+  },
+  {
+    token: "aria-*",
+    title: "Accessibility",
+    text: "Semantic HTML, keyboard-operable controls and visible focus states — every interactive element on this site works without a mouse."
+  },
+  {
+    token: "perf",
+    title: "Performance",
+    text: "API and UI-level optimization — around 25% faster load times on SpiceJet applications."
+  }
+];
+
+// Figures taken directly from the resume.
+const stats = [
+  {
+    value: 3,
+    prefix: "",
+    suffix: "+",
+    label: "Years building production software"
+  },
+  {
+    value: 5,
+    prefix: "",
+    suffix: "",
+    label: "Live production systems shipped at SpiceJet"
+  },
+  {
+    value: 30,
+    prefix: "~",
+    suffix: "%",
+    label: "Fewer manual booking errors after validation workflows"
+  },
+  {
+    value: 25,
+    prefix: "~",
+    suffix: "%",
+    label: "Faster load times from API and UI optimization"
+  }
+];
+
+// `core` marks the day-to-day stack; `logo` renders a technology mark.
+const skills = [
+  {
+    category: "Frontend",
+    items: [
+      {name: "React.js", logo: "react", core: true},
+      {name: "Next.js", logo: "next", core: true},
+      {name: "TypeScript", logo: "ts", core: true},
+      {name: "JavaScript (ES6+)", logo: "js", core: true},
+      {name: "HTML5", logo: "html", core: true},
+      {name: "CSS3", logo: "css", core: true},
+      {name: "Tailwind CSS"},
+      {name: "Material UI"},
+      {name: "Bootstrap"},
+      {name: "Leaflet.js"}
+    ]
+  },
+  {
+    category: "Mobile",
+    items: [
+      {name: "React Native", logo: "react", core: true},
+      {name: "Expo"},
+      {name: "Expo Router"},
+      {name: "Android (Java, XML)"}
+    ]
+  },
+  {
+    category: "State & forms",
+    items: [
+      {name: "Redux", core: true},
+      {name: "Redux Toolkit"},
+      {name: "Zustand"},
+      {name: "React Hook Form"},
+      {name: "Zod"}
+    ]
+  },
+  {
+    category: "API integration",
+    items: [{name: "REST APIs", core: true}, {name: "Axios"}, {name: "JSON"}]
+  },
+  {
+    category: "Backend",
+    items: [
+      {name: ".NET"},
+      {name: "ASP.NET Core Web API"},
+      {name: "Node.js"},
+      {name: "SQL"}
+    ]
+  },
+  {
+    category: "Tools",
+    items: [
+      {name: "Git"},
+      {name: "GitHub"},
+      {name: "VS Code"},
+      {name: "Chrome DevTools"},
+      {name: "Postman"},
+      {name: "Visual Studio"},
+      {name: "Android Studio"},
+      {name: "Figma"}
+    ]
+  }
+];
+
+const experience = [
+  {
+    role: "Software Engineer",
+    company: "SpiceJet",
+    companyNote: "including SpiceTech, subsidiary",
+    date: "Mar 2023 – Present",
+    location: "Gurgaon",
+    impact: [
+      {value: "~30%", label: "fewer manual booking errors"},
+      {value: "~25%", label: "faster load times"}
+    ],
+    systems: ["GRS", "DCS", "PNR", "EPM", "FRV", "CFI", "BAG"],
+    summary:
+      "Build and maintain full-stack web applications with React.js frontends and .NET / ASP.NET Core Web API backends, covering booking management, passenger handling, baggage tracking and notifications in the airline domain.",
+    bullets: [
+      "Reduced manual booking errors by approx. 30% by building validation workflows and automating manual steps in the booking process.",
+      "Improved application performance and load time by ~25% through API and UI-level optimization.",
+      "Designed and implemented EDIFACT file-generation workflows for PNRGOV — file structure, data mapping, validation and automated export.",
+      "Developed the WebDCS (Web Departure Control System) frontend, including boarding pass and bag tag interfaces for thermal and industry-standard printers.",
+      "Handle features end to end, from requirements to implementation, testing and deployment; debug production issues with Chrome DevTools and Postman."
+    ],
+    tech: [
+      "React.js",
+      "Redux",
+      "TypeScript",
+      ".NET",
+      "ASP.NET Core Web API",
+      "Material UI",
+      "Bootstrap",
+      "Leaflet.js",
+      "ZPL"
+    ]
+  },
+  {
+    role: "Software Developer Intern",
+    company: "SpiceJet",
+    date: "Aug 2022 – Feb 2023",
+    summary:
+      "Worked on web and mobile application development using React.js and React Native, alongside quality testing and bug fixing.",
+    bullets: [
+      "Assisted in developing React Native mobile apps and internal web tools using React.js.",
+      "Tested and resolved UI/UX bugs across SpiceJet's website and admin panels.",
+      "Worked with component-based architecture and Git-based team collaboration."
+    ],
+    tech: ["React.js", "React Native", "Git"]
+  },
+  {
+    role: "Android Developer – Associate Intern",
+    company: "The Entrepreneurship Network",
+    date: "Oct 2021 – Jan 2022",
+    summary: "Learned core Android development through mentor-guided tasks.",
+    bullets: [
+      "Built small modules and features in Java with XML layouts as part of weekly tasks.",
+      "Worked through development assignments and problems set by mentors."
+    ],
+    tech: ["Android", "Java", "XML"]
+  },
+  {
+    role: "Web Development Intern",
+    company: "Internshala",
+    date: "Sep 2021 – Oct 2021",
+    summary:
+      "Online internship covering frontend and backend fundamentals, ending in a complete web application.",
+    bullets: [
+      "Built a web application with user login, form validation and dynamic content.",
+      "Hosted the project and presented it for final evaluation."
+    ],
+    tech: ["HTML", "CSS", "JavaScript", "React.js", "Node.js"]
+  }
+];
+
+const featuredProject = {
+  name: "Ziclo",
+  kind: "Personal project · Mobile app",
+  tagline: "Service-booking app for solar and AC services",
+  description:
+    "A cross-platform service-booking app with separate experiences for customers, field workers, managers and admins. I built the app's frontend in TypeScript with Expo and integrated it with a NestJS + Prisma REST backend.",
+  role: "Frontend developer — architecture, screens, state and API integration",
+  // Grouped by frontend area; every item is implemented in the repo.
+  highlights: [
     {
-      schoolName: "RPS Group of Institutions",
-      logo: require("./assets/images/rpslogo.png"),
-      subHeader: "Bachelor of Technology in Computer Science",
-      duration: "August 2018 - June 2022",
-      desc: "Completed B.Tech in Computer Science with academic projects in Android and web development.",
-      descBullets: [
-        "Developed NEET Preparation App during 6th semester",
-        "Built an online payment application as a final year capstone project"
-      ]
+      title: "Role-based interfaces",
+      text: "Separate navigation and screens for users, workers, managers and admins, using Expo Router route groups."
     },
     {
-      schoolName: "Aishly Public School",
-      logo: require("./assets/images/aishlylogo.png"), // or replace with school logo if available
-      subHeader: "Senior Secondary Education (12th - CBSE)",
-      duration: "2016 - 2018",
-      desc: "Completed 12th with a focus on Science stream (Physics, Chemistry, Math).",
-      descBullets: ["Passed with distinction", "School: Ateli Mandi, Haryana"]
+      title: "Service-booking flow",
+      text: "Multi-step booking — service type, package, date and time, location, details and payment — plus tracking and rescheduling."
     },
     {
-      schoolName: "Aishly Public School",
-      logo: require("./assets/images/aishlylogo.png"), // reuse same or no logo
-      subHeader: "Secondary Education (10th - CBSE)",
-      duration: "2014 - 2016",
-      desc: "Completed 10th standard under CBSE curriculum.",
-      descBullets: ["Passed with excellent academic record", "School: Ateli Mandi, Haryana"]
+      title: "State & forms",
+      text: "Global state with Zustand; typed forms and validation with React Hook Form and Zod."
+    },
+    {
+      title: "API integration",
+      text: "Axios API layer integrated with a NestJS + Prisma REST backend."
+    },
+    {
+      title: "Payment UI",
+      text: "Razorpay checkout inside the booking flow."
+    },
+    {
+      title: "Operations screens",
+      text: "Worker check-in and attendance, manager tools for assignment, leave and pricing, a live worker map, push notifications and OTP login."
     }
+  ],
+  // Actual route structure from the Ziclo repository (app/ directory).
+  routes: [
+    {name: "app/", depth: 0},
+    {name: "(public)/", depth: 1, note: "auth & onboarding"},
+    {name: "(user)/", depth: 1, note: "customer"},
+    {name: "(worker)/", depth: 1, note: "field staff"},
+    {name: "(manager)/", depth: 1, note: "operations"},
+    {name: "(admin)/", depth: 1, note: "back office"},
+    {name: "booking/", depth: 1, note: "multi-step flow"},
+    {name: "service-type.tsx", depth: 2},
+    {name: "package-selection.tsx", depth: 2},
+    {name: "date-time.tsx", depth: 2},
+    {name: "location-picker.tsx", depth: 2},
+    {name: "user-details.tsx", depth: 2},
+    {name: "payment.tsx", depth: 2, last: true}
+  ],
 
+  tech: [
+    "React Native",
+    "Expo",
+    "TypeScript",
+    "Expo Router",
+    "Zustand",
+    "Axios",
+    "React Hook Form",
+    "Zod",
+    "Razorpay",
+    "NestJS API",
+    "Prisma"
+  ],
+  links: [
+    {
+      label: "View source",
+      url: "https://github.com/sahil03122000/Ziclo_Frontend"
+    }
+  ],
+  screenshots: [
+    {
+      src: require("./assets/images/projects/ziclo-1.png"),
+      alt: "Ziclo splash screen showing the Ziclo logo with solar and AC services"
+    },
+    {
+      src: require("./assets/images/projects/ziclo-2.png"),
+      alt: "Ziclo login screen with email, password and OTP login options"
+    },
+    {
+      src: require("./assets/images/projects/ziclo-3.png"),
+      alt: "Ziclo create-account screen with name, phone, email and password fields"
+    }
   ]
 };
 
-// Your top 3 proficient stacks/tech experience
-const techStack = {
-  viewSkillBars: true, // Show the skill proficiency bars
-  experience: [
+const workProjects = {
+  note: "Internal enterprise applications built at SpiceJet. Source code and demos aren't public.",
+  items: [
     {
-<<<<<<< HEAD
-      Stack: "Frontend (React.js,MUI, HTML/CSS, Bootstrap)",
-      progressPercentage: "90%"
+      name: "Group Reservation System",
+      code: "GRS",
+      live: true,
+      description:
+        "Agents create group booking requests; airline staff review and approve them. Built the React.js frontend and integrated .NET Web APIs.",
+      highlights: [
+        "Fare management, policy application and cancellation workflows",
+        "Validation, pricing and approval logic"
+      ],
+      tech: ["React.js", "Redux", ".NET Web API", "Material UI"]
     },
     {
-      Stack: "Backend (Node.js, Express.js, SQL Server,.NET)",
-=======
-      Stack: "Frontend (React.js, HTML/CSS, Bootstrap)",
-      progressPercentage: "90%"
+      name: "WebDCS",
+      code: "DCS",
+      live: true,
+      description:
+        "Web Departure Control System frontend for check-in and departure management.",
+      highlights: [
+        "Boarding pass and bag tag interfaces for thermal printers",
+        "Android-based printing workflows for airport devices"
+      ],
+      tech: ["React.js", "REST APIs", "ZPL"]
     },
     {
-      Stack: "Backend (Node.js, Express.js, SQL Server)",
->>>>>>> 6b6fcd0dcfb62df46cbd59b0d2d4091af61bde86
-      progressPercentage: "75%"
+      name: "PNRGOV",
+      code: "PNR",
+      description:
+        "Full-stack airline operations application for government passenger-data reporting.",
+      highlights: [
+        "EDIFACT file generation, data mapping and validation",
+        "Automated export workflows"
+      ],
+      tech: ["React.js", ".NET", "EDIFACT"]
     },
     {
-      Stack: "Mobile Development (Android, React Native)",
-      progressPercentage: "90%"
+      name: "Elite Passenger Management",
+      code: "EPM",
+      live: true,
+      description:
+        "Manage elite and VVIP passengers and automate SSR tagging during booking.",
+      highlights: [
+        "Auto-assignment of VVIP SSR codes",
+        "Responsive UI on real-time APIs"
+      ],
+      tech: ["React.js", "REST APIs"]
     },
     {
-      Stack: "Programming Languages (Java, JavaScript)",
-      progressPercentage: "90%"
+      name: "Flight Routes Visualization",
+      code: "FRV",
+      live: true,
+      description: "Interactive route map with dynamic airport and route data.",
+      highlights: [
+        "Route animations based on selected airports",
+        "Optimized map rendering"
+      ],
+      tech: ["React.js", "Leaflet.js", "Material UI"]
     },
     {
-      Stack: "Version Control & Tools (Git, GitHub, VS Code)",
-      progressPercentage: "85%"
+      name: "Cancelled Flight Info",
+      code: "CFI",
+      live: true,
+      description:
+        "Processes cancelled-flight data from Excel uploads and reflects it on the website.",
+      highlights: [
+        "Automated website updates",
+        "Email and SMS notifications to affected passengers"
+      ],
+      tech: ["React.js", "REST APIs"]
+    },
+    {
+      name: "Airline Baggage Tracker",
+      code: "BAG",
+      description:
+        "End-to-end tracking of baggage complaints — missing, excess, damaged and pilferage.",
+      highlights: [
+        "Complaint logging, status updates and resolution",
+        ".NET services for workflow handling"
+      ],
+      tech: ["React.js", ".NET"]
+    },
+    {
+      name: "GST Dashboard",
+      code: "GST",
+      description:
+        "Full-stack dashboard for tracking GST invoice data for internal finance teams.",
+      highlights: [
+        "Role-based access control",
+        "Aggregated invoice counts and summaries"
+      ],
+      tech: ["React.js", "Node.js", "Material UI"]
+    },
+    {
+      name: "Messaging Dashboard",
+      code: "MSG",
+      description:
+        "Full-stack dashboard for managing SMS and notification templates.",
+      highlights: ["Template whitelisting and approval", "Role-based access"],
+      tech: ["React.js", "Node.js", "Bootstrap"]
     }
-  ],
-  displayCodersrank: false
-};
-
-
-// Work experience section
-
-const workExperiences = {
-  display: true, // Set it to true to show workExperiences Section
-  experience: [
-    {
-      role: "Software Engineer",
-      company: "SpiceJet",
-      companylogo: require("./assets/images/spicejtlogo.png"),
-      date: "MAR 2023 – Present",
-      desc: "Leading and contributing to key web and mobile applications for internal airline operations using React.js, Node.js, and .NET stack.",
-      descBullets: [
-        "Developed and maintained GroupTool and MHB portals using React.js for smooth internal communication and workflow",
-        "Built Flight Routes app in React Native with Leaflet maps for dynamic airport routing",
-        "Implemented full-stack GST Dashboard and Messaging Dashboard using React.js, Node.js, and SQL Server",
-        "Worked on SG Price tool to manage airline pricing modules in real-time",
-        "Developed WEBDCS app for printing boarding passes and bag tags using ZPL (Zebra Programming Language) with Bluetooth printer integration"
-      ]
-    }
-    ,
-    {
-      role: "Software Developer Intern",
-      company: "SpiceJet",
-      companylogo: require("./assets/images/spicejtlogo.png"), // Use actual logo or comment it out
-      date: "AUG 2022 – FEB 2023",
-      desc: "Worked on web and mobile application development using React.js and React Native, while contributing to quality assurance and bug fixing across platforms.",
-      descBullets: [
-        "Assisted in development of React Native mobile apps and internal web tools using React.js",
-        "Performed quality testing and resolved UI/UX bugs in SpiceJet’s website and admin panels",
-        "Gained hands-on experience in React.js fundamentals, component architecture, and Git-based collaboration"
-      ]
-    }
-    ,
-    {
-      role: "Android Developer - Associate Intern",
-      company: "The Entrepreneurship Network",
-      companylogo: require("./assets/images/TheEntrepreneurshipNetworklogo.png"), // Replace or comment out if no logo
-      date: "October 2021 – January 2022",
-      desc: "Focused on learning core Android development through guided tasks and problem-solving under mentor supervision.",
-      descBullets: [
-        "Practiced Android concepts using Java and XML layouts",
-        "Solved development-related queries and assignments given by mentors",
-        "Built small modules and features as part of weekly learning tasks"
-      ]
-    },
-    {
-      role: "Web Development Intern",
-      company: "Internshala",
-      companylogo: require("./assets/images/Internshalalogo.png"), // Replace with actual logo or comment out
-      date: "SEPT 2021 – OCT 2021",
-      desc: "Completed an online internship focused on frontend and backend development, culminating in the creation of a fully functional website.",
-      descBullets: [
-        "Learned HTML, CSS, JavaScript, React.js, and Node.js through structured modules",
-        "Built a complete web application with user login, form validation, and dynamic content",
-        "Hosted the project and presented final output for evaluation"
-      ]
-    }
-
   ]
 };
 
+const freelanceProjects = [
+  {
+    name: "HMR & Associates",
+    code: "HMR",
+    description:
+      "Responsive website for an advisory and compliance firm, delivered end to end from requirement gathering through deployment.",
+    image: require("./assets/images/projects/hmra.jpg"),
+    imageAlt: "Homepage of the HMR & Associates website",
+    tech: ["React.js", "Responsive design"],
+    links: [{label: "Visit site", url: "https://hmraca.in/"}]
+  },
+  {
+    name: "Mahawar Samaj, Ateli",
+    code: "MSA",
+    description:
+      "Community information website with events and updates, built with a focus on clean UI and performance.",
+    image: require("./assets/images/projects/mahavar-samaj.jpg"),
+    imageAlt: "Homepage of the Mahawar Samaj Ateli website",
+    tech: ["React.js", "Responsive design"],
+    links: [{label: "Visit site", url: "https://mahavarsamajateli.in/"}]
+  }
+];
 
-/* Your Open Source Section to View Your Github Pinned Projects
-To know how to get github key look at readme.md */
-
-const openSource = {
-  showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
-  display: true // Set false to hide this section, defaults to true
-};
-
-// Some big projects you have worked on
-
-const bigProjects = {
-  title: "Big Projects",
-  subtitle: "Real-world projects I contributed to at SpiceJet and personally",
-  projects: [
-    {
-      image: require("./assets/images/grouplogo.png"),
-      projectName: "Group Reservation System",
-      projectDesc: "Group Booking Tool is a web application developed in React.js to streamline group flight reservations. It allows agents and internal departments to efficiently manage bookings, using Material UI, Bootstrap, and Redux for a responsive and state-managed interface.",
-      footerLink: []
-    },
-    {
-      image: require("./assets/images/spicejtlogo.png"),
-      projectName: "MHB (Missing Hand Baggage)",
-      projectDesc: "MHB is a React-based web application designed for managing and tracking missing hand baggage cases at airports. It enables staff to log incidents, monitor baggage status, and coordinate recovery actions efficiently, improving overall baggage handling operations.",
-      footerLink: []
-    },
-    {
-      image: require("./assets/images/spicejetlogo.png"),
-      projectName: "WEBDCS – Boarding Pass Printer",
-      projectDesc: "React app with ZPL (Zebra Programming Language) integration to print boarding passes and bag tags over Bluetooth.",
-      footerLink: []
-    },
-    {
-      image: require("./assets/images/spicedestinationlogo.png"),
-      projectName: "SG Routes",
-      projectDesc: "React Native app using Leaflet.js to visualize dynamic airport routes and geolocation data for airline route planning.",
-      footerLink: []
-    },
-    {
-      image: require("./assets/images/spicejetlogo.png"),
-      projectName: "GST Dasboard",
-      projectDesc: "GST Dashboard is a full-stack web application built with React and Node.js to monitor and manage GST-related data. It features role-based access control and provides real-time insights into invoice counts, filing statuses, and compliance metrics for internal finance teams.",
-      footerLink: []
-    },
-    {
-      image: require("./assets/images/spicejetlogo.png"),
-      projectName: "Messaging Dashboard",
-      projectDesc: "Messaging Dashboard is a full-stack application developed using React and Node.js to manage and track communication templates. It includes role-based access control, template whitelisting, and real-time monitoring, ensuring secure and organized message distribution across departments.",
-      footerLink: []
-    },
-<<<<<<< HEAD
-=======
-    // {
-    //   image: require("./assets/images/spicejtlogo.png"), // optional custom logo
-    //   projectName: "Taskify",
-    //   projectDesc: "Jira-like task and issue management system with full-stack tech (React, Node.js, SQL Server) and WhatsApp/email notifications.",
-    //   footerLink: [
-    //     {
-    //       name: "GitHub (if public)",
-    //       url: "https://github.com/yourusername/taskify" // Replace with real link if available
-    //     }
-    //   ]
-    // },
-    {
-      image: require("./assets/images/portfoliologo.png"), // Add a relevant icon or screenshot
-      projectName: "My Portfolio",
-      projectDesc: "Personal portfolio website built with React.js to showcase my projects, skills, resume, and contact details.",
-      footerLink: [
-        {
-          name: "Live Site",
-          url: "https://your-portfolio-link.com" // ← replace with your real deployed URL
-        },
-        {
-          name: "GitHub Repo",
-          url: "https://github.com/yourusername/portfolio" // optional
-        }
-      ]
-    },
->>>>>>> 6b6fcd0dcfb62df46cbd59b0d2d4091af61bde86
-    {
-      image: require("./assets/images/hmra.png"), // Add a relevant icon or screenshot
-      projectName: "HMRA Website",
-      projectDesc: "Designed and developed a responsive personal brand website for HRMA using React.js. Includes a portfolio, about section, and contact form.",
-      footerLink: [
-        {
-          name: "Live Site",
-<<<<<<< HEAD
-          url: "https://hmraca.in/" // ← replace with your real deployed URL
-        }
-      ]
-    },
-    {
-      image: require("./assets/images/mahavarsamajateli.png"), // Add a relevant icon or screenshot
-      projectName: "Mahawar-Samaj Website",
-      projectDesc: "Designed and developed mahavarsamajateli.in with a clean UI and optimized performance.",
-      footerLink: [
-        {
-          name: "Live Site",
-          url: "https://mahavarsamajateli.in/" // ← replace with your real deployed URL
-=======
-          url: "https://your-portfolio-link.com" // ← replace with your real deployed URL
-        },
-        {
-          name: "GitHub Repo",
-          url: "https://github.com/yourusername/portfolio" // optional
->>>>>>> 6b6fcd0dcfb62df46cbd59b0d2d4091af61bde86
-        }
-      ]
-    }
-
+const siteProject = {
+  name: "This portfolio",
+  description:
+    "Custom-designed and built on Create React App — no template, UI kit or animation library. The source is public.",
+  image: require("./assets/images/projects/portfolio.jpg"),
+  facts: [
+    "React 16 + SCSS — no UI kit or animation library",
+    "Scroll reveals via IntersectionObserver; honours reduced-motion",
+    "Keyboard-operable menu, tabs and accordions with visible focus",
+    "Under 60 KB of gzipped JavaScript",
+    "Deployed to GitHub Pages under /sahil_portfolio/"
   ],
-  display: true
-};
-
-
-// Achievement Section
-// Include certificates, talks etc
-
-const achievementSection = {
-  title: emoji("Achievements And Certifications 🏆 "),
-  subtitle:
-    "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
-
-  achievementsCards: [
+  tech: ["React", "SCSS", "Accessibility", "GitHub Pages"],
+  links: [
     {
-      title: "SpiceStar Rewards & Recognition",
-      subtitle:
-        "Recognized for my contributions to the SpiceStar internal portal, enhancing employee engagement and experience.",
-      image: require("./assets/images/rewards.png"), // Use any reward/trophy-like icon or custom image
-      imageAlt: "SpiceStar Logo",
-      footerLink: []
-      //   {
-      //     // name: "Certificate of Appreciation",
-      //     // url: "https://yourdrive.com/appreciation.pdf" // Replace with real file if available
-      //   }
-      // ]
-    }
-  ],
-//   ,
-//     {
-//   title: "Google Assistant Action",
-//     subtitle:
-//   "Developed a Google Assistant Action JavaScript Guru that is available on 2 Billion devices world wide.",
-//     image: require("./assets/images/googleAssistantLogo.webp"),
-//       imageAlt: "Google Assistant Action Logo",
-//         footerLink: [
-//           {
-//             name: "View Google Assistant Action",
-//             url: "https://assistant.google.com/services/a/uid/000000100ee688ee?hl=en"
-//           }
-//         ]
-// },
-
-// {
-//   title: "PWA Web App Developer",
-//     subtitle: "Completed Certifcation from SMIT for PWA Web App Development",
-//       image: require("./assets/images/pwaLogo.webp"),
-//         imageAlt: "PWA Logo",
-//           footerLink: [
-//             { name: "Certification", url: "" },
-//             {
-//               name: "Final Project",
-//               url: "https://pakistan-olx-1.firebaseapp.com/"
-//             }
-//           ]
-// }
-//   ],
-display: true // Set false to hide this section, defaults to true
-};
-
-// Blogs Section
-
-const blogSection = {
-  title: "Blogs",
-  subtitle:
-    "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
-  displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
-  blogs: [
-    {
-      url: "https://blog.usejournal.com/create-a-google-assistant-action-and-win-a-google-t-shirt-and-cloud-credits-4a8d86d76eae",
-      title: "Win a Google Assistant Tshirt and $200 in Google Cloud Credits",
-      description:
-        "Do you want to win $200 and Google Assistant Tshirt by creating a Google Assistant Action in less then 30 min?"
+      label: "Live site",
+      url: "https://sahilgupta03.github.io/sahil_portfolio/"
     },
-    {
-      url: "https://medium.com/@saadpasta/why-react-is-the-best-5a97563f423e",
-      title: "Why REACT is The Best?",
-      description:
-        "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
-    }
-  ],
-  display: true // Set false to hide this section, defaults to true
+    {label: "Source", url: "https://github.com/SahilGupta03/sahil_portfolio"}
+  ]
 };
 
-// Talks Sections
+const education = [
+  {
+    degree: "B.Tech, Computer Science & Engineering",
+    school: "RPS Group of Institutions",
+    place: "Mahendergarh, Haryana",
+    date: "Aug 2018 – Jun 2022",
+    notes: [
+      "Built a NEET preparation app as 6th-semester coursework.",
+      "Built an online payment application as the final-year capstone project."
+    ]
+  },
+  {
+    degree: "Senior Secondary (12th), CBSE",
+    school: "Aishly Public School",
+    place: "Ateli Mandi, Haryana",
+    date: "2018"
+  },
+  {
+    degree: "Secondary (10th), CBSE",
+    school: "Aishly Public School",
+    place: "Ateli Mandi, Haryana",
+    date: "2016"
+  }
+];
 
-const talkSection = {
-  title: "TALKS",
-  subtitle: emoji(
-    "I LOVE TO SHARE MY LIMITED KNOWLEDGE AND GET A SPEAKER BADGE 😅"
-  ),
+const achievements = [
+  {
+    title: "SpiceStar Rewards & Recognition",
+    org: "SpiceJet",
+    text: "Recognized for contributions to the SpiceStar internal portal."
+  }
+];
 
-  talks: [
-    {
-      title: "Build Actions For Google Assistant",
-      subtitle: "Codelab at GDG DevFest Karachi 2019",
-      slides_url: "https://bit.ly/saadpasta-slides",
-      event_url: "https://www.facebook.com/events/2339906106275053/"
-    }
-  ],
-  display: true // Set false to hide this section, defaults to true
+const contact = {
+  heading: "Let's talk",
+  text: "Whether it's a role, a project or a question about my work, email is the quickest way to reach me. I'm also on LinkedIn."
 };
 
-// Podcast Section
-
-const podcastSection = {
-  title: emoji("Podcast 🎙️"),
-  subtitle: "I LOVE TO TALK ABOUT MYSELF AND TECHNOLOGY",
-
-  // Please Provide with Your Podcast embeded Link
-  podcast: [
-    "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo"
-  ],
-  display: true // Set false to hide this section, defaults to true
-};
-
-// Resume Section
-const resumeSection = {
-  title: "Resume",
-  subtitle: "Feel free to download my resume",
-
-  // Please Provide with Your Podcast embeded Link
-  display: true // Set false to hide this section, defaults to true
-};
-
-const contactInfo = {
-  title: emoji("Contact Me ☎️"),
-  subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+91-7027098656",
-  email_address: "sahil84330@gmail.com"
-};
-
-// Twitter Section
-
-const twitterDetails = {
-  userName: "twitter", //Replace "twitter" with your twitter username without @
-  display: true // Set true to display this section, defaults to false
-};
-
-const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
+const navLinks = [
+  {id: "about", label: "About"},
+  {id: "skills", label: "Skills"},
+  {id: "experience", label: "Experience"},
+  {id: "projects", label: "Projects"},
+  {id: "education", label: "Education"},
+  {id: "contact", label: "Contact"}
+];
 
 export {
-  illustration,
-  greeting,
-  socialMediaLinks,
-  splashScreen,
-  skillsSection,
-  educationInfo,
-  techStack,
-  workExperiences,
-  openSource,
-  bigProjects,
-  achievementSection,
-  blogSection,
-  talkSection,
-  podcastSection,
-  contactInfo,
-  twitterDetails,
-  isHireable,
-  resumeSection
+  profile,
+  hero,
+  about,
+  craft,
+  stats,
+  skills,
+  experience,
+  featuredProject,
+  workProjects,
+  freelanceProjects,
+  siteProject,
+  education,
+  achievements,
+  contact,
+  navLinks
 };

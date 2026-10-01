@@ -1,68 +1,59 @@
-import React, {useContext} from "react";
+import React from "react";
 import "./Skills.scss";
-import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
-import {illustration, skillsSection} from "../../portfolio";
-import {Fade} from "react-reveal";
-import codingPerson from "../../assets/lottie/codingPerson";
-import DisplayLottie from "../../components/displayLottie/DisplayLottie";
-import StyleContext from "../../contexts/StyleContext";
+import SectionHeading from "../../components/sectionHeading/SectionHeading";
+import Reveal from "../../components/reveal/Reveal";
+import TechLogo from "../../components/techLogo/TechLogo";
+import {skills} from "../../portfolio";
 
 export default function Skills() {
-  const {isDark} = useContext(StyleContext);
-  if (!skillsSection.display) {
-    return null;
-  }
   return (
-    <div className={isDark ? "dark-mode main" : "main"} id="skills">
-      <div className="skills-main-div">
-        <Fade left duration={1000}>
-          <div className="skills-image-div">
-            {illustration.animated ? (
-              <DisplayLottie animationData={codingPerson} />
-            ) : (
-              <img
-                alt="Man Working"
-                src={require("../../assets/images/developerActivity.svg")}
-              ></img>
-            )}
-          </div>
-        </Fade>
-        <Fade right duration={1000}>
-          <div className="skills-text-div">
-            <h1
-              className={isDark ? "dark-mode skills-heading" : "skills-heading"}
-            >
-              {skillsSection.title}{" "}
-            </h1>
-            <p
-              className={
-                isDark
-                  ? "dark-mode subTitle skills-text-subtitle"
-                  : "subTitle skills-text-subtitle"
-              }
-            >
-              {skillsSection.subTitle}
-            </p>
-            <SoftwareSkill />
-            <div>
-              {skillsSection.skills.map((skills, i) => {
-                return (
-                  <p
-                    key={i}
-                    className={
-                      isDark
-                        ? "dark-mode subTitle skills-text"
-                        : "subTitle skills-text"
-                    }
+    <section id="skills" className="section" aria-labelledby="skills-title">
+      <div className="container">
+        <SectionHeading
+          id="skills-title"
+          index="02"
+          label="Skills"
+          title="The toolkit,"
+          accent="in practice."
+          description="Grouped by where they fit in a frontend stack — what I use day to day at SpiceJet and on Ziclo and freelance work. No self-rated percentages."
+          align="split"
+        />
+
+        <div className="skills__legend mono" aria-hidden="true">
+          <span className="skill skill--core skill--legend">Core stack</span>
+        </div>
+
+        <div className="skills">
+          {skills.map((group, index) => (
+            <Reveal key={group.category} className="skills__row">
+              <span className="skills__index mono">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className="skills__category serif">{group.category}</h3>
+              <ul className="skills__items">
+                {group.items.map(item => (
+                  <li
+                    key={item.name}
+                    className={`skill ${item.core ? "skill--core" : ""}`}
                   >
-                    {skills}
-                  </p>
-                );
-              })}
-            </div>
-          </div>
-        </Fade>
+                    {item.logo && (
+                      <TechLogo
+                        name={item.logo}
+                        size={18}
+                        className="skill__logo"
+                      />
+                    )}
+                    {item.name}
+                    {item.core && (
+                      <span className="visually-hidden"> (core stack)</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

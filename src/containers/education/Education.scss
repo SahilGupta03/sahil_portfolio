@@ -1,50 +1,133 @@
-.education-heading {
-  font-size: 56px;
-  font-weight: 400;
-}
+@use "../../styles/mixins" as *;
 
-.education-section {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  padding: 20px 0px;
-  margin: 0px auto;
-  margin-top: 2rem;
-}
+.education {
+  display: grid;
+  gap: 48px;
 
-.education-section > * {
-  flex: 1;
-  margin-bottom: 30px;
-}
-
-.education-card-container {
-  display: flex;
-  flex-direction: column;
-  padding-top: 20px;
-}
-
-@media (max-width: 1380px) {
-  .education-card-container {
-    padding-top: 0px;
-  }
-  .education-heading {
-    font-size: 40px;
-  }
-  .education-text-subtitle {
-    font-size: 18px;
-    text-align: center;
+  @include desktop-up {
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+    gap: 48px;
+    align-items: start;
   }
 }
 
-@media (max-width: 768px) {
-  .education-card-container {
-    padding-top: 0px;
+.ledger {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line-strong);
+
+  &__row {
+    display: grid;
+    gap: 8px 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+
+    @include tablet-up {
+      grid-template-columns: 200px minmax(0, 1fr) auto;
+      align-items: baseline;
+      padding: 32px 0;
+    }
   }
-  .education-heading {
-    font-size: 30px;
-    text-align: center;
+
+  &__date {
+    color: var(--muted);
   }
-  .education-text-subtitle {
-    font-size: 16px;
+
+  &__degree {
+    font-size: clamp(1.3rem, 1.05rem + 1vw, 1.75rem);
+    letter-spacing: -0.035em;
+  }
+
+  &__school {
+    margin-top: 4px;
+    font-size: 1.3rem;
+    color: var(--accent);
+  }
+
+  &__notes {
+    margin-top: 16px;
+
+    li {
+      font-size: 0.9375rem;
+    }
+  }
+
+  &__place {
+    color: var(--subtle);
+    font-size: 0.875rem;
+  }
+}
+
+.award {
+  position: relative;
+  overflow: hidden;
+  padding: 28px;
+  border-radius: var(--radius);
+  background: var(--stage);
+  color: #ece8df;
+
+  :root[data-theme="dark"] & {
+    border: 1px solid var(--stage-line);
+  }
+
+  // Slow-turning signal ring — the one ornamental flourish in this section
+  &::after {
+    content: "";
+    position: absolute;
+    right: -60px;
+    bottom: -60px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 1px dashed rgba(255, 91, 36, 0.5);
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation: spin 30s linear infinite;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__icon {
+    display: inline-grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--signal);
+    color: #141413;
+  }
+
+  &__org {
+    color: #a8a29e;
+  }
+
+  &__title {
+    margin-top: 40px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.8rem, 1.4rem + 1.2vw, 2.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
+    margin-top: 14px;
+    max-width: 30ch;
+    color: #a8a29e;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }

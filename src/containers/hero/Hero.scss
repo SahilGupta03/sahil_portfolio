@@ -1,0 +1,313 @@
+@use "../../styles/mixins" as *;
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  padding: calc(var(--header-h) + 28px) 0 72px;
+  overflow: hidden;
+
+  @include tablet-up {
+    padding: calc(var(--header-h) + 40px) 0 104px;
+  }
+
+  // Editorial column hairlines behind the composition
+  &__grid-lines {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    pointer-events: none;
+
+    // Phones: keep only the outer rules so no line runs through body text
+    span:nth-child(2) {
+      @include mobile-only {
+        visibility: hidden;
+      }
+    }
+
+    span {
+      width: 1px;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--line) 20%,
+        var(--line) 80%,
+        transparent
+      );
+    }
+  }
+
+  /* ---------- Meta row ---------- */
+  &__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.68rem;
+  }
+
+  &__meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    &--hide-sm {
+      display: none;
+
+      @include tablet-up {
+        display: inline-flex;
+      }
+    }
+  }
+
+  &__scroll {
+    svg {
+      @media (prefers-reduced-motion: no-preference) {
+        animation: nudge 2s var(--ease-in-out) infinite;
+      }
+    }
+
+    &:hover {
+      color: var(--ink);
+    }
+  }
+
+  /* ---------- Masthead ---------- */
+  &__masthead {
+    position: relative;
+    display: grid;
+    margin-top: 24px;
+
+    @include tablet-up {
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        "title title"
+        "title title";
+    }
+  }
+
+  &__title {
+    display: grid;
+    font-size: clamp(4.4rem, 1rem + 15vw, 13.5rem);
+    font-weight: 600;
+    line-height: 0.86;
+    letter-spacing: -0.06em;
+
+    @include tablet-up {
+      grid-area: title;
+    }
+  }
+
+  &__line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.06em;
+
+    > span {
+      display: inline-block;
+    }
+
+    &--2 {
+      justify-self: end;
+      // Signal full-stop after the surname
+      > span::after {
+        content: ".";
+        color: var(--signal);
+      }
+    }
+  }
+
+  &__role {
+    display: grid;
+    gap: 10px;
+    margin-top: 24px;
+
+    .serif {
+      font-size: clamp(1.9rem, 1.3rem + 2.4vw, 3.25rem);
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    @include tablet-up {
+      grid-area: title;
+      align-self: start;
+      justify-self: end;
+      padding-right: 0.15em; // room for the italic overhang
+      margin-top: clamp(8px, 2vw, 36px);
+      text-align: right;
+    }
+  }
+
+  &__role-sub {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 0.68rem;
+
+    @include tablet-up {
+      justify-content: flex-end;
+    }
+  }
+
+  &__role-tag {
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: var(--ink);
+    color: var(--paper);
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Body ---------- */
+  &__body {
+    display: grid;
+    gap: 48px;
+    margin-top: 48px;
+
+    @include desktop-up {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+      gap: 72px;
+      align-items: start;
+      margin-top: 48px;
+    }
+  }
+
+  &__lead {
+    max-width: 22ch;
+    margin-top: 32px;
+    font-size: clamp(1.5rem, 1.15rem + 1.3vw, 2.1rem);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+
+    // Desktop: tuck the statement into the space left of "Gupta"
+    @include desktop-up {
+      position: absolute;
+      left: 0;
+      bottom: 0.4em;
+      width: 38%;
+      max-width: none;
+      margin: 0;
+    }
+  }
+
+  &__lead-accent {
+    color: var(--accent);
+    font-size: 1.12em;
+    letter-spacing: -0.01em;
+  }
+
+  &__stack {
+    display: inline-flex;
+    gap: 4px;
+
+    svg {
+      transition: transform 0.4s var(--ease-out);
+    }
+
+    svg:hover {
+      transform: translateY(-2px) rotate(-6deg);
+    }
+  }
+
+  &__text {
+    max-width: 48ch;
+    color: var(--muted);
+    font-size: 1.0625rem;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 36px;
+
+    @include mobile-only {
+      .btn {
+        flex: 1 1 100%;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__social {
+    margin-top: 28px;
+  }
+
+  /* ---------- Entrance choreography ---------- */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-ready & {
+      .hero__line > span {
+        transform: translateY(105%);
+        transition: transform 1.3s var(--ease-out);
+      }
+
+      .hero__line--2 > span {
+        transition-delay: 0.12s;
+      }
+
+      .hero__meta,
+      .hero__role,
+      .hero__lead,
+      .hero__intro,
+      .playground {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
+      }
+
+      .hero__meta {
+        transform: none;
+        transition-delay: 0.1s;
+      }
+
+      .hero__role {
+        transition-delay: 0.45s;
+      }
+
+      .hero__lead {
+        transition-delay: 0.55s;
+      }
+
+      .hero__intro {
+        transition-delay: 0.65s;
+      }
+
+      .playground {
+        transition-delay: 0.75s;
+      }
+    }
+
+    .reveal-ready &.is-visible {
+      .hero__line > span,
+      .hero__meta,
+      .hero__role,
+      .hero__lead,
+      .hero__intro,
+      .playground {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  }
+}
+
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}

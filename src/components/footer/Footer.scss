@@ -1,15 +1,181 @@
-@import "../../_globalColor";
+@use "../../styles/mixins" as *;
 
-.footer-text {
-  text-align: center;
-  color: $subTitle !important;
+.site-footer {
+  // No overflow clipping here: the wordmark is sized to fit, so nothing is cut.
+  border-top: 1px solid var(--line-strong);
+
+  &__body {
+    padding-top: clamp(40px, 6vw, 80px);
+  }
+
+  /* ---------- Wordmark ---------- */
+  // Masks the entrance animation only. The padding gives room for the
+  // descender in "Gupta" and the italic overhang, so glyphs are never clipped.
+  &__mark {
+    overflow: hidden;
+    padding: 0.02em 0 0.04em;
+  }
+
+  &__wordmark {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.16em;
+    width: max-content;
+    max-width: none;
+    margin: 0 auto;
+    // Fallback before JS measures (always narrower than the container).
+    font-size: clamp(3rem, 13vw, 14rem);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.06em;
+    white-space: nowrap;
+    color: var(--ink);
+
+    span {
+      display: inline-block;
+      padding-bottom: 0.14em; // descender room
+    }
+
+    .serif {
+      padding-right: 0.06em; // italic overhang
+      color: var(--signal);
+      letter-spacing: -0.02em;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal-ready & span {
+        transform: translateY(105%);
+        transition: transform 1.2s var(--ease-out);
+      }
+
+      .reveal-ready & span + span {
+        transition-delay: 0.1s;
+      }
+
+      .reveal-ready .is-visible > & span {
+        transform: none;
+      }
+    }
+  }
+
+  /* ---------- Meta row ---------- */
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px 24px;
+    margin-top: clamp(16px, 2.5vw, 32px);
+    padding: 24px 0 calc(32px + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid var(--line);
+
+    @include mobile-only {
+      gap: 20px;
+    }
+  }
+
+  &__text {
+    font-size: 0.875rem;
+
+    @include mobile-only {
+      flex-basis: 100%;
+      order: 2;
+    }
+  }
+
+  &__social {
+    @include mobile-only {
+      order: 1;
+    }
+  }
+
+  &__muted {
+    color: var(--muted);
+  }
+
+  &__top {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 42px;
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    svg {
+      transition: transform 0.45s var(--ease-out);
+    }
+
+    &:hover svg {
+      transform: translateY(-3px);
+    }
+
+    @include mobile-only {
+      order: 1;
+    }
+  }
 }
 
-.dark-mode {
-  color: $textColorDark !important;
-}
+/* Editor-style status bar */
+.status-bar {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-2);
+  color: var(--muted);
+  font-size: 0.62rem;
 
-.footer-div {
-  margin-top: 2rem;
-  padding-bottom: 1rem;
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: 34px;
+  }
+
+  &__items {
+    display: flex;
+    gap: 0;
+    list-style: none;
+    min-width: 0;
+    overflow: hidden;
+
+    li {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 12px;
+      white-space: nowrap;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      & + li {
+        border-left: 1px solid var(--line-strong);
+      }
+    }
+  }
+
+  &__branch {
+    display: inline-flex;
+    color: var(--accent);
+  }
+
+  &__hide-sm {
+    @include mobile-only {
+      display: none !important;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    color: var(--ink);
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
 }
