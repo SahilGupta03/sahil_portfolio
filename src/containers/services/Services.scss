@@ -1,0 +1,204 @@
+@use "../../styles/mixins" as *;
+
+// Same hairline grid as the Approach section: borders come from a 1px gap
+// over a line-coloured background.
+.services {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line);
+
+  @include tablet-up {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include desktop-up {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  &__item {
+    position: relative;
+    isolation: isolate;
+    padding: 28px 0;
+    background: var(--paper);
+
+    @include tablet-up {
+      padding: 36px 32px 40px;
+
+      &:nth-child(odd) {
+        padding-left: 0;
+      }
+    }
+
+    @include desktop-up {
+      &:nth-child(odd) {
+        padding-left: 32px;
+      }
+
+      &:nth-child(3n + 1) {
+        padding-left: 0;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--signal);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.7s var(--ease-out);
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  &__token {
+    display: inline-flex;
+    align-items: center;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 6px;
+    background: var(--stage);
+    color: var(--signal);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    transition: background-color 0.35s ease, color 0.35s ease;
+
+    .services__item:hover & {
+      background: var(--signal);
+      color: #141413;
+    }
+  }
+
+  &__index {
+    color: var(--subtle);
+  }
+
+  &__title {
+    font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.75rem);
+    letter-spacing: -0.035em;
+  }
+
+  &__text {
+    margin-top: 12px;
+    max-width: 40ch;
+    color: var(--muted);
+    font-size: 0.975rem;
+    line-height: 1.65;
+  }
+
+  &__points {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0 0;
+    padding: 0;
+    font-size: 0.7rem;
+
+    li {
+      padding: 4px 10px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      color: var(--muted);
+    }
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line-strong);
+
+    @include desktop-up {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__cta-text {
+    max-width: 44ch;
+    font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
+    letter-spacing: -0.02em;
+  }
+
+  &__cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    @include mobile-only {
+      .btn {
+        flex: 1 1 100%;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+.workflow-wrap {
+  margin-top: 56px;
+}
+
+.workflow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 24px;
+
+  @include tablet-up {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include desktop-up {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  &__label {
+    margin-bottom: 20px;
+    color: var(--muted);
+  }
+
+  &__item {
+    padding-top: 16px;
+    border-top: 1px solid var(--line-strong);
+  }
+
+  &__step {
+    color: var(--accent);
+  }
+
+  &__title {
+    margin-top: 8px;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+  }
+
+  &__text {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}

@@ -3,15 +3,18 @@ import "./Contact.scss";
 import SectionHeading from "../../components/sectionHeading/SectionHeading";
 import Reveal from "../../components/reveal/Reveal";
 import Clock from "../../components/clock/Clock";
+import QuoteForm from "./QuoteForm";
 import {
   ArrowRightIcon,
   CheckIcon,
   CopyIcon,
   DownloadIcon,
   GitHubIcon,
-  LinkedInIcon
+  LinkedInIcon,
+  WhatsAppIcon
 } from "../../components/icons/Icons";
 import {contact, profile} from "../../portfolio";
+import {whatsappLink} from "../../utils";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -30,7 +33,16 @@ export default function Contact() {
     }
   };
 
+  const whatsapp = whatsappLink(profile.whatsapp);
+
   const channels = [
+    whatsapp && {
+      label: "WhatsApp",
+      detail: "Quickest reply",
+      href: whatsapp,
+      Icon: WhatsAppIcon,
+      external: true
+    },
     {
       label: "LinkedIn",
       detail: "in/sahil-gupta-169759190",
@@ -52,7 +64,7 @@ export default function Contact() {
       Icon: DownloadIcon,
       download: profile.resumeFileName
     }
-  ];
+  ].filter(Boolean);
 
   return (
     <section
@@ -63,13 +75,15 @@ export default function Contact() {
       <div className="container">
         <SectionHeading
           id="contact-title"
-          index="07"
+          index="08"
           label="Contact"
           title="Let's"
           accent="talk."
           description={contact.text}
           align="split"
         />
+
+        <QuoteForm />
 
         <Reveal className="contact__email-row">
           <a className="contact__email" href={`mailto:${profile.email}`}>

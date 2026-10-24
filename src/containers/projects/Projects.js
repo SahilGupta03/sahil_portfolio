@@ -34,7 +34,7 @@ function Showcase({project}) {
       <div className="showcase__stage" ref={stageRef}>
         <div className="showcase__intro">
           <p className="showcase__kind mono">
-            <span className="showcase__num">A</span>
+            <span className="showcase__num">B</span>
             {project.kind}
           </p>
           <h3 id="showcase-title" className="showcase__name">
@@ -225,7 +225,7 @@ function SystemsIndex() {
     <div className="systems">
       <Reveal className="systems__head">
         <p className="systems__label mono">
-          <span className="showcase__num">B</span>
+          <span className="showcase__num">C</span>
           Production work at SpiceJet
         </p>
         <p className="systems__note">{workProjects.note}</p>
@@ -386,21 +386,18 @@ export default function Projects() {
       <div className="container">
         <SectionHeading
           id="projects-title"
-          index="05"
+          index="02"
           label="Selected work"
           title="Things I've"
           accent="built & shipped."
-          description="A React Native app I built independently, production applications I work on at SpiceJet, and websites delivered to freelance clients."
+          description="Websites delivered to freelance clients, a React Native app I built independently, and production applications I work on at SpiceJet."
           align="split"
         />
 
-        <Showcase project={featuredProject} />
-        <SystemsIndex />
-
-        <div className="clients">
+        <div className="clients clients--first">
           <Reveal className="systems__head">
             <p className="systems__label mono">
-              <span className="showcase__num">C</span>
+              <span className="showcase__num">A</span>
               Freelance client work
             </p>
             <p className="systems__note">
@@ -417,6 +414,12 @@ export default function Projects() {
             ))}
           </div>
         </div>
+
+        <div className="clients">
+          <Showcase project={featuredProject} />
+        </div>
+        <SystemsIndex />
+
 
         <div className="clients">
           <Reveal className="systems__head">

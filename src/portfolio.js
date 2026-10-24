@@ -14,12 +14,16 @@ const profile = {
   github: "https://github.com/SahilGupta03",
   repo: "https://github.com/SahilGupta03/sahil_portfolio",
   linkedin: "https://www.linkedin.com/in/sahil-gupta-169759190",
+  // WhatsApp number with country code, digits only (e.g. "919876543210").
+  // Leave empty to hide the WhatsApp button and links.
+  whatsapp: "917027098656",
   resumeUrl,
   resumeFileName: "Sahil_Gupta_Resume.pdf"
 };
 
 const hero = {
   eyebrow: "Software Engineer at SpiceJet",
+  availability: "Available for freelance projects",
   // `headlineAccent` is set in italic serif at the end of the headline.
   headline: "Building digital experiences that feel",
   headlineAccent: "effortless.",
@@ -241,6 +245,59 @@ const experience = [
     tech: ["HTML", "CSS", "JavaScript", "React.js", "Node.js"]
   }
 ];
+
+// Freelance services. No prices on the site — every card leads to "Get a quote".
+const services = [
+  {
+    token: "web",
+    title: "Business websites",
+    text: "Fast, mobile-first websites for clinics, firms, shops and communities — designed, built, deployed and SEO-ready.",
+    points: ["Custom design", "Google-friendly SEO", "Domain & hosting setup"]
+  },
+  {
+    token: "booking",
+    title: "Booking & payment systems",
+    text: "Appointment and service booking with online payments (Razorpay / UPI), confirmations and an admin dashboard.",
+    points: ["Booking flows", "Razorpay / UPI", "Admin panel"]
+  },
+  {
+    token: "app",
+    title: "Mobile apps",
+    text: "Cross-platform Android and iOS apps in React Native — like Ziclo, a service-booking app with customer, worker and admin roles.",
+    points: ["React Native + Expo", "OTP login", "Push notifications"]
+  },
+  {
+    token: "dashboard",
+    title: "Dashboards & web apps",
+    text: "Internal tools, admin panels and data dashboards built with React and connected to your APIs — the work I do every day at SpiceJet.",
+    points: ["Role-based access", "Reports & tables", "API integration"]
+  },
+  {
+    token: "redesign",
+    title: "Redesign & speed fixes",
+    text: "Turn an old or slow website into a modern, responsive one — without losing your content or Google ranking.",
+    points: ["Responsive redesign", "Performance", "Bug fixing"]
+  },
+  {
+    token: "care",
+    title: "Maintenance & support",
+    text: "Ongoing updates, content changes, fixes and monitoring after launch, so your site keeps working.",
+    points: ["Content updates", "Fixes", "Monthly support"]
+  }
+];
+
+// How a freelance project runs, start to finish.
+const workflow = [
+  {step: "01", title: "Tell me about it", text: "Share what you need on WhatsApp or email."},
+  {step: "02", title: "Free quote", text: "I send a clear scope, timeline and quote — usually within 24 hours."},
+  {step: "03", title: "Build & review", text: "You see progress on a live preview link and give feedback."},
+  {step: "04", title: "Launch & support", text: "I deploy it, hand it over and stay available for changes."}
+];
+
+// Client testimonials. Add real quotes only — the section stays hidden while
+// this list is empty. Example:
+// {quote: "...", name: "Client name", role: "Partner, HMR & Associates"}
+const testimonials = [];
 
 const featuredProject = {
   name: "Ziclo",
@@ -514,14 +571,27 @@ const achievements = [
 
 const contact = {
   heading: "Let's talk",
-  text: "Whether it's a role, a project or a question about my work, email is the quickest way to reach me. I'm also on LinkedIn."
+  text: "Have a website or app in mind? Tell me what you need and I'll send a free quote, usually within 24 hours. For roles and other questions, email works too.",
+  // Web3Forms access key (free at https://web3forms.com). With a key, the
+  // quote form sends enquiries straight to your inbox; without one it falls
+  // back to opening the visitor's email app. The key is safe to publish.
+  web3formsKey: "219f0eaf-32dd-44ee-bca4-98290c74d147",
+  projectTypes: [
+    "Business website",
+    "Booking / payment system",
+    "Mobile app",
+    "Dashboard / web app",
+    "Redesign or fixes",
+    "Something else"
+  ]
 };
 
 const navLinks = [
+  {id: "services", label: "Services"},
+  {id: "projects", label: "Work"},
   {id: "about", label: "About"},
   {id: "skills", label: "Skills"},
   {id: "experience", label: "Experience"},
-  {id: "projects", label: "Projects"},
   {id: "education", label: "Education"},
   {id: "contact", label: "Contact"}
 ];
@@ -532,6 +602,9 @@ export {
   about,
   craft,
   stats,
+  services,
+  workflow,
+  testimonials,
   skills,
   experience,
   featuredProject,

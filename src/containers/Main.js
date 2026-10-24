@@ -10,6 +10,9 @@ import WorkExperience from "./workExperience/WorkExperience";
 import Projects from "./projects/Projects";
 import Education from "./education/Education";
 import Contact from "./contact/Contact";
+import Services from "./services/Services";
+import Testimonials from "./testimonials/Testimonials";
+import WhatsAppButton from "../components/whatsappButton/WhatsAppButton";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 
@@ -57,15 +60,18 @@ const Main = () => {
       <main id="main" tabIndex={-1}>
         <Hero />
         <Marquee items={marqueeItems} />
+        <Services />
+        <Projects />
+        <Testimonials />
         <About />
         <Skills />
         <Craft />
         <WorkExperience />
-        <Projects />
         <Education />
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </StyleProvider>
   );
 };

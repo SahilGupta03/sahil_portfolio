@@ -160,9 +160,11 @@
   color: var(--paper);
   font-size: 0.875rem;
   font-weight: 500;
+  white-space: nowrap;
   transition: background-color 0.35s var(--ease-out), color 0.35s ease;
 
   svg {
+    flex-shrink: 0;
     transition: transform 0.35s var(--ease-out);
   }
 

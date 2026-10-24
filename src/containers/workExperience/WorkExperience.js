@@ -118,7 +118,7 @@ export default function WorkExperience() {
       <div className="container">
         <SectionHeading
           id="experience-title"
-          index="04"
+          index="06"
           label="Experience"
           title="Where I've"
           accent="done the work."

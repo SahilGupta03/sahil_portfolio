@@ -5,11 +5,7 @@ import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Clock from "../../components/clock/Clock";
 import Playground from "../../components/playground/Playground";
 import TechLogo from "../../components/techLogo/TechLogo";
-import {
-  ArrowDownIcon,
-  ArrowRightIcon,
-  DownloadIcon
-} from "../../components/icons/Icons";
+import {ArrowDownIcon, ArrowRightIcon} from "../../components/icons/Icons";
 import {useInView} from "../../hooks/useInView";
 import {about, hero, profile} from "../../portfolio";
 
@@ -33,7 +29,7 @@ export default function Hero() {
         <div className="hero__meta mono">
           <span className="hero__meta-item">
             <span className="live-dot" aria-hidden="true" />
-            {hero.eyebrow}
+            {hero.availability}
           </span>
           <span className="hero__meta-item hero__meta-item--hide-sm">
             {profile.location} — <Clock />
@@ -79,16 +75,11 @@ export default function Hero() {
           <div className="hero__intro">
             <p className="hero__text">{hero.intro}</p>
             <div className="hero__actions">
-              <Button href="#projects" icon={<ArrowRightIcon size={16} />}>
-                View projects
+              <Button href="#contact" icon={<ArrowRightIcon size={16} />}>
+                Get a quote
               </Button>
-              <Button
-                href={profile.resumeUrl}
-                download={profile.resumeFileName}
-                variant="secondary"
-                icon={<DownloadIcon size={16} />}
-              >
-                Download resume
+              <Button href="#projects" variant="secondary">
+                View my work
               </Button>
             </div>
             <SocialMedia className="hero__social" />

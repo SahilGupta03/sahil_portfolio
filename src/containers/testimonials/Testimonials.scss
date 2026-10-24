@@ -1,0 +1,51 @@
+@use "../../styles/mixins" as *;
+
+.testimonials {
+  &__label {
+    margin-bottom: 32px;
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 40px;
+
+    @include tablet-up {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 48px;
+    }
+  }
+
+  &__item figure {
+    margin: 0;
+    padding-top: 24px;
+    border-top: 1px solid var(--line-strong);
+  }
+
+  &__quote {
+    margin: 0;
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
+    line-height: 1.2;
+  }
+
+  &__by {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 20px;
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__role {
+    color: var(--muted);
+    font-size: 0.72rem;
+  }
+}

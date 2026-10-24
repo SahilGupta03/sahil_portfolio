@@ -15,7 +15,7 @@ export default function Education() {
       <div className="container">
         <SectionHeading
           id="education-title"
-          index="06"
+          index="07"
           label="Education"
           title="Education &"
           accent="recognition."
