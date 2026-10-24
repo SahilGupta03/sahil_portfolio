@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sahil_portfolio/static/css/main.a8682db5.css",
-    "main.js": "/sahil_portfolio/static/js/main.bc9c755e.js",
+    "main.css": "/sahil_portfolio/static/css/main.5f263fa5.css",
+    "main.js": "/sahil_portfolio/static/js/main.fb355f40.js",
     "static/media/ziclo-1.png": "/sahil_portfolio/static/media/ziclo-1.14f6c0473626c35bf40b.png",
     "static/media/ziclo-2.png": "/sahil_portfolio/static/media/ziclo-2.274fb7137f4a97b8c689.png",
     "static/media/ziclo-3.png": "/sahil_portfolio/static/media/ziclo-3.1afac58c7ed3903224e6.png",
@@ -9,11 +9,11 @@
     "static/media/mahavar-samaj.jpg": "/sahil_portfolio/static/media/mahavar-samaj.3aaf57a404593204e107.jpg",
     "static/media/hmra.jpg": "/sahil_portfolio/static/media/hmra.0e293435e6bc6b5407e7.jpg",
     "index.html": "/sahil_portfolio/index.html",
-    "main.a8682db5.css.map": "/sahil_portfolio/static/css/main.a8682db5.css.map",
-    "main.bc9c755e.js.map": "/sahil_portfolio/static/js/main.bc9c755e.js.map"
+    "main.5f263fa5.css.map": "/sahil_portfolio/static/css/main.5f263fa5.css.map",
+    "main.fb355f40.js.map": "/sahil_portfolio/static/js/main.fb355f40.js.map"
   },
   "entrypoints": [
-    "static/css/main.a8682db5.css",
-    "static/js/main.bc9c755e.js"
+    "static/css/main.5f263fa5.css",
+    "static/js/main.fb355f40.js"
   ]
 }
