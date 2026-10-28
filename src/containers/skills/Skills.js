@@ -11,7 +11,7 @@ export default function Skills() {
       <div className="container">
         <SectionHeading
           id="skills-title"
-          index="04"
+          index="02"
           label="Skills"
           title="The toolkit,"
           accent="in practice."

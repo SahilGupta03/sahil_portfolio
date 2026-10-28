@@ -2,7 +2,7 @@ import React, {useEffect, useLayoutEffect, useRef, useState} from "react";
 import "./Header.scss";
 import ThemeToggle from "../themeToggle/ThemeToggle";
 import SocialMedia from "../socialMedia/SocialMedia";
-import {ArrowRightIcon, CloseIcon, DownloadIcon, MenuIcon} from "../icons/Icons";
+import {CloseIcon, DownloadIcon, MenuIcon} from "../icons/Icons";
 import {navLinks, profile} from "../../portfolio";
 import {useActiveSection} from "../../hooks/useActiveSection";
 
@@ -147,9 +147,13 @@ export default function Header() {
 
         <div className="site-header__actions">
           <ThemeToggle />
-          <a href="#contact" className="header-cta">
-            <span>Get a quote</span>
-            <ArrowRightIcon size={15} />
+          <a
+            href={profile.resumeUrl}
+            download={profile.resumeFileName}
+            className="header-cta"
+          >
+            <span>Resume</span>
+            <DownloadIcon size={15} />
           </a>
           <button
             ref={menuButtonRef}

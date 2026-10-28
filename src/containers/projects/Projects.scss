@@ -248,14 +248,6 @@
   }
 }
 
-.clients--first {
-  margin-top: 0;
-
-  @include desktop-up {
-    margin-top: 0;
-  }
-}
-
 .systems__head {
   display: flex;
   flex-wrap: wrap;

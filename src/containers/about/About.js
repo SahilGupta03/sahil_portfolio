@@ -13,7 +13,7 @@ export default function About() {
       <div className="container">
         <SectionHeading
           id="about-title"
-          index="03"
+          index="01"
           label="About"
           title="Frontend engineer,"
           accent="production-minded."

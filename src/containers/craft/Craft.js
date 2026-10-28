@@ -10,7 +10,7 @@ export default function Craft() {
       <div className="container">
         <SectionHeading
           id="approach-title"
-          index="05"
+          index="03"
           label="Approach"
           title="How I"
           accent="build interfaces."
