@@ -15,7 +15,7 @@ export default function Skills() {
           label="Skills"
           title="The toolkit,"
           accent="in practice."
-          description="Grouped by where they fit in a frontend stack — what I use day to day at SpiceJet and on Ziclo and freelance work. No self-rated percentages."
+          description="Grouped by where they fit in a frontend stack — what I use day to day at SpiceJet and on freelance work. No self-rated percentages."
           align="split"
         />
 

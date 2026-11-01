@@ -158,7 +158,6 @@ it("only links to real project destinations", () => {
   );
   expect(hrefs).toEqual(
     expect.arrayContaining([
-      "https://github.com/sahil03122000/Ziclo_Frontend",
       "https://github.com/SahilGupta03/sahil_portfolio",
       "https://hmraca.in/",
       "https://mahavarsamajateli.in/"

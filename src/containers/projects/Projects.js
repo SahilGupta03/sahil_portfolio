@@ -2,12 +2,9 @@ import React, {useCallback, useEffect, useState} from "react";
 import "./Projects.scss";
 import SectionHeading from "../../components/sectionHeading/SectionHeading";
 import Reveal from "../../components/reveal/Reveal";
-import SplitText from "../../components/splitText/SplitText";
 import Button from "../../components/button/Button";
 import {ExternalIcon, GitHubIcon, PlusIcon} from "../../components/icons/Icons";
-import {useParallax} from "../../hooks/useParallax";
 import {
-  featuredProject,
   freelanceProjects,
   siteProject,
   workProjects
@@ -22,114 +19,6 @@ function TagList({items, className = ""}) {
         </li>
       ))}
     </ul>
-  );
-}
-
-/* ---------- Ziclo: full editorial showcase on a dark stage ---------- */
-function Showcase({project}) {
-  const stageRef = useParallax();
-
-  return (
-    <article className="showcase" aria-labelledby="showcase-title">
-      <div className="showcase__stage" ref={stageRef}>
-        <div className="showcase__intro">
-          <p className="showcase__kind mono">
-            <span className="showcase__num">A</span>
-            {project.kind}
-          </p>
-          <h3 id="showcase-title" className="showcase__name">
-            <SplitText text={project.name} />
-          </h3>
-          <p className="showcase__tagline serif">{project.tagline}</p>
-          <p className="showcase__description">{project.description}</p>
-          <dl className="showcase__meta">
-            <div>
-              <dt className="mono">Role</dt>
-              <dd>{project.role}</dd>
-            </div>
-            <div>
-              <dt className="mono">Stack</dt>
-              <dd>{project.tech.slice(0, 3).join(" · ")}</dd>
-            </div>
-          </dl>
-          {project.links && (
-            <div className="showcase__links">
-              {project.links.map(link => (
-                <Button
-                  key={link.url}
-                  href={link.url}
-                  variant="light"
-                  external
-                  icon={<GitHubIcon size={16} />}
-                >
-                  {link.label}
-                </Button>
-              ))}
-            </div>
-          )}
-        </div>
-
-        <div className="showcase__media">
-          <span className="showcase__halo" aria-hidden="true" />
-          {project.screenshots.map((shot, index) => (
-            <img
-              key={shot.alt}
-              src={shot.src}
-              alt={shot.alt}
-              width="360"
-              height="714"
-              loading="lazy"
-              decoding="async"
-              className={`showcase__phone showcase__phone--${index + 1}`}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="showcase__details">
-        <div className="showcase__work">
-          <h4 className="showcase__details-title mono">Frontend work</h4>
-          <ol className="showcase__features">
-            {project.highlights.map((item, index) => (
-              <Reveal
-                as="li"
-                key={item.title}
-                delay={(index % 2) * 90}
-                className="showcase__feature"
-              >
-                <span className="showcase__feature-index mono">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <p className="showcase__feature-title">{item.title}</p>
-                  <p className="showcase__feature-text">{item.text}</p>
-                </div>
-              </Reveal>
-            ))}
-          </ol>
-          <TagList items={project.tech} className="showcase__tags" />
-        </div>
-
-        <Reveal as="figure" className="tree" delay={120}>
-          <figcaption className="tree__caption mono">
-            Route structure <span>— from the repo</span>
-          </figcaption>
-          <ul className="tree__list">
-            {project.routes.map(route => (
-              <li
-                key={route.name}
-                className={`tree__item tree__item--d${route.depth} ${
-                  route.name.endsWith("/") ? "is-dir" : "is-file"
-                }`}
-              >
-                <span className="tree__name">{route.name}</span>
-                {route.note && <span className="tree__note">{route.note}</span>}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-      </div>
-    </article>
   );
 }
 
@@ -225,7 +114,7 @@ function SystemsIndex() {
     <div className="systems">
       <Reveal className="systems__head">
         <p className="systems__label mono">
-          <span className="showcase__num">B</span>
+          <span className="showcase__num">A</span>
           Production work at SpiceJet
         </p>
         <p className="systems__note">{workProjects.note}</p>
@@ -390,17 +279,16 @@ export default function Projects() {
           label="Selected work"
           title="Things I've"
           accent="built & shipped."
-          description="A React Native app I built independently, production applications I work on at SpiceJet, and websites delivered to freelance clients."
+          description="Production applications I work on at SpiceJet and websites delivered to freelance clients."
           align="split"
         />
 
-        <Showcase project={featuredProject} />
         <SystemsIndex />
 
         <div className="clients">
           <Reveal className="systems__head">
             <p className="systems__label mono">
-              <span className="showcase__num">C</span>
+              <span className="showcase__num">B</span>
               Freelance client work
             </p>
             <p className="systems__note">
@@ -421,7 +309,7 @@ export default function Projects() {
         <div className="clients">
           <Reveal className="systems__head">
             <p className="systems__label mono">
-              <span className="showcase__num">D</span>
+              <span className="showcase__num">C</span>
               This site
             </p>
             <p className="systems__note">

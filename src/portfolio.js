@@ -33,7 +33,7 @@ const about = {
   paragraphs: [
     "I'm a software engineer with 3+ years of experience building and maintaining production web applications. My focus is the frontend: React.js and Next.js with JavaScript and TypeScript, styled with Tailwind CSS, Bootstrap or Material UI, and connected to REST APIs.",
     "At SpiceJet (including SpiceTech, its technology subsidiary) I build full-stack applications with React.js frontends and .NET / ASP.NET Core Web API backends, covering booking management, passenger handling, baggage tracking and notifications. I usually own a feature end to end — requirements, implementation, testing, deployment and production debugging with Chrome DevTools and Postman.",
-    "I care about responsive, cross-browser layouts, component-based architecture and performance. Outside SpiceJet, I've delivered client websites as a freelancer and built Ziclo, a React Native service-booking app, in TypeScript with Expo."
+    "I care about responsive, cross-browser layouts, component-based architecture and performance. Outside SpiceJet, I've delivered client websites as a freelancer."
   ],
   current: [
     {label: "Role", value: "Software Engineer"},
@@ -60,7 +60,7 @@ const craft = [
   {
     token: "store",
     title: "State management",
-    text: "Redux and Redux Toolkit on React apps at SpiceJet; Zustand with typed forms (React Hook Form + Zod) in Ziclo."
+    text: "Redux and Redux Toolkit on React apps at SpiceJet; Zustand with typed forms (React Hook Form + Zod) in React Native work."
   },
   {
     token: "fetch()",
@@ -241,92 +241,6 @@ const experience = [
     tech: ["HTML", "CSS", "JavaScript", "React.js", "Node.js"]
   }
 ];
-
-const featuredProject = {
-  name: "Ziclo",
-  kind: "Personal project · Mobile app",
-  tagline: "Service-booking app for solar and AC services",
-  description:
-    "A cross-platform service-booking app with separate experiences for customers, field workers, managers and admins. I built the app's frontend in TypeScript with Expo and integrated it with a NestJS + Prisma REST backend.",
-  role: "Frontend developer — architecture, screens, state and API integration",
-  // Grouped by frontend area; every item is implemented in the repo.
-  highlights: [
-    {
-      title: "Role-based interfaces",
-      text: "Separate navigation and screens for users, workers, managers and admins, using Expo Router route groups."
-    },
-    {
-      title: "Service-booking flow",
-      text: "Multi-step booking — service type, package, date and time, location, details and payment — plus tracking and rescheduling."
-    },
-    {
-      title: "State & forms",
-      text: "Global state with Zustand; typed forms and validation with React Hook Form and Zod."
-    },
-    {
-      title: "API integration",
-      text: "Axios API layer integrated with a NestJS + Prisma REST backend."
-    },
-    {
-      title: "Payment UI",
-      text: "Razorpay checkout inside the booking flow."
-    },
-    {
-      title: "Operations screens",
-      text: "Worker check-in and attendance, manager tools for assignment, leave and pricing, a live worker map, push notifications and OTP login."
-    }
-  ],
-  // Actual route structure from the Ziclo repository (app/ directory).
-  routes: [
-    {name: "app/", depth: 0},
-    {name: "(public)/", depth: 1, note: "auth & onboarding"},
-    {name: "(user)/", depth: 1, note: "customer"},
-    {name: "(worker)/", depth: 1, note: "field staff"},
-    {name: "(manager)/", depth: 1, note: "operations"},
-    {name: "(admin)/", depth: 1, note: "back office"},
-    {name: "booking/", depth: 1, note: "multi-step flow"},
-    {name: "service-type.tsx", depth: 2},
-    {name: "package-selection.tsx", depth: 2},
-    {name: "date-time.tsx", depth: 2},
-    {name: "location-picker.tsx", depth: 2},
-    {name: "user-details.tsx", depth: 2},
-    {name: "payment.tsx", depth: 2, last: true}
-  ],
-
-  tech: [
-    "React Native",
-    "Expo",
-    "TypeScript",
-    "Expo Router",
-    "Zustand",
-    "Axios",
-    "React Hook Form",
-    "Zod",
-    "Razorpay",
-    "NestJS API",
-    "Prisma"
-  ],
-  links: [
-    {
-      label: "View source",
-      url: "https://github.com/sahil03122000/Ziclo_Frontend"
-    }
-  ],
-  screenshots: [
-    {
-      src: require("./assets/images/projects/ziclo-1.png"),
-      alt: "Ziclo splash screen showing the Ziclo logo with solar and AC services"
-    },
-    {
-      src: require("./assets/images/projects/ziclo-2.png"),
-      alt: "Ziclo login screen with email, password and OTP login options"
-    },
-    {
-      src: require("./assets/images/projects/ziclo-3.png"),
-      alt: "Ziclo create-account screen with name, phone, email and password fields"
-    }
-  ]
-};
 
 const workProjects = {
   note: "Internal enterprise applications built at SpiceJet. Source code and demos aren't public.",
@@ -534,7 +448,6 @@ export {
   stats,
   skills,
   experience,
-  featuredProject,
   workProjects,
   freelanceProjects,
   siteProject,
